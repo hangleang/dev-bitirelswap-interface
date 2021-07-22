@@ -1,0 +1,24 @@
+{
+  "background_color": "#fff",
+  "display": "standalone",
+  "homepage_url": "https://app.bitrielswap.com",
+  "icons": [
+    {
+      "src": "./images/384x137_App_Icon.png",
+      "sizes": "384x137",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./images/1600x572_App_Icon.png",
+      "sizes": "1600x572",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "name": "BitrielSwap",
+  "short_name": "BitrielSwap",
+  "start_url": ".",
+  "theme_color": "#F338C3"
+}
