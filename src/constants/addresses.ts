@@ -18,8 +18,14 @@ export const SEL_ADDRESS: AddressMap = {
   [ChainId.BSC]: '0x288d3a87a87c284ed685e0490e5c4cc0883a060a',
   [ChainId.BSC_TESTNET]: '0xDED2DEDf0cF48033cb50a4EF3e7587bAbc227151',
 }
-export const V2_FACTORY_ADDRESSES: AddressMap = constructSameAddressMap(V2_FACTORY_ADDRESS)
-export const V2_ROUTER_ADDRESS: AddressMap = constructSameAddressMap('0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D')
+export const V2_FACTORY_ADDRESSES: AddressMap = {
+  ...constructSameAddressMap(V2_FACTORY_ADDRESS),
+  [ChainId.BSC_TESTNET]: '0x927A548cD60c0A4b410c32178A88454A70B22fea',
+}
+export const V2_ROUTER_ADDRESS: AddressMap = {
+  ...constructSameAddressMap('0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'),
+  [ChainId.BSC_TESTNET]: '0xDE0D6363aA17CA3ecCa3E6Bf4da90f5c904ED996',
+}
 
 /**
  * The older V0 governance account
