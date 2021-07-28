@@ -136,7 +136,10 @@ function CurrencyRow({
         </Text>
         <TYPE.darkGray ml="0px" fontSize={'12px'} fontWeight={300}>
           {!currency.isNative && !isOnSelectedList && customAdded ? (
-            <Trans>{currency.name} • Added by user</Trans>
+            <>
+              <span>{currency.name}</span>
+              <Trans>• Added by user</Trans>
+            </>
           ) : (
             currency.name
           )}
