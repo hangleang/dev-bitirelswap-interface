@@ -1293,11 +1293,6 @@
     "@web3-react/types" "^6.0.7"
     "tiny-warning" "^1.0.3"
 
-"@bitrielswap/default-token-list@^1.0.5":
-  "integrity" "sha512-HYty1+6jcRoVnmJSyHbrn67A52GqCC6z08Y3up4DGyPb+S3mw7ALlRx6N8yLnx+qGpKSXIR12VXV6I1RIYXAxA=="
-  "resolved" "https://registry.npmjs.org/@bitrielswap/default-token-list/-/default-token-list-1.0.5.tgz"
-  "version" "1.0.5"
-
 "@cnakazawa/watch@^1.0.3":
   "integrity" "sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ=="
   "resolved" "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.4.tgz"
