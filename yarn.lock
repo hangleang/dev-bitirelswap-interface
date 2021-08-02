@@ -7783,15 +7783,15 @@
     "@truffle/hdwallet-provider" "^1.4.1"
     "dotenv" "^10.0.0"
 
-"dev-bitrielswap-default-token-list@^1.0.1":
-  "integrity" "sha512-hcArRBmyDy18X3c6CUVl0L/zl6R6oFlZlq89VuQ7H0IC+lpLV3SabdNqoGdSXLpWytyCAyOXkm7HVqqgsi2Org=="
-  "resolved" "https://registry.npmjs.org/dev-bitrielswap-default-token-list/-/dev-bitrielswap-default-token-list-1.0.1.tgz"
-  "version" "1.0.1"
+"dev-bitrielswap-default-token-list@^1.0.3":
+  "integrity" "sha512-fma0ovxvxBbeoIOsuqOuAoPIskvsqRc4qTQBn4sk4/7zLT4irCDTM3u1cb6fMATEPTtX60QFk7vmE7zeJT6o1g=="
+  "resolved" "https://registry.npmjs.org/dev-bitrielswap-default-token-list/-/dev-bitrielswap-default-token-list-1.0.3.tgz"
+  "version" "1.0.3"
 
-"dev-bitrielswap-periphery@^1.1.0":
-  "integrity" "sha512-kTfXGxq5legWnpmElyjKcGjilxhZM5X/3ewvm4xmCuG7nXo/KYxQLWs/lmEPR8084oYe4LVfm5h7+vhMJZanXw=="
-  "resolved" "https://registry.npmjs.org/dev-bitrielswap-periphery/-/dev-bitrielswap-periphery-1.1.0.tgz"
-  "version" "1.1.0"
+"dev-bitrielswap-periphery@^1.1.0", "dev-bitrielswap-periphery@^1.1.1":
+  "integrity" "sha512-VOfPOcgd5PL3UgjG4XDgxzdFDYCiWjRVdvsfYhkDcxA+4Uv7AIWgzEh1xYbrcZ9Ek5pdwlXkhbF0JhBwEISiWQ=="
+  "resolved" "https://registry.npmjs.org/dev-bitrielswap-periphery/-/dev-bitrielswap-periphery-1.1.1.tgz"
+  "version" "1.1.1"
   dependencies:
     "@openzeppelin/contracts" "^3.4.1-solc-0.7-2"
     "@truffle/hdwallet-provider" "^1.4.1"
@@ -7799,10 +7799,10 @@
     "dev-bitrielswap-core" "^1.0.3"
     "dotenv" "^10.0.0"
 
-"dev-bitrielswap-sdk@^1.1.1":
-  "integrity" "sha512-keVYi/8K6LgP43CSVFIajo+9gfvwOhbNAWrqikoQM4r4TRLFP7zRAO8I4lo1gp4q6Wy6nz4TYriVGpFJ+VBkNQ=="
-  "resolved" "https://registry.npmjs.org/dev-bitrielswap-sdk/-/dev-bitrielswap-sdk-1.1.1.tgz"
-  "version" "1.1.1"
+"dev-bitrielswap-sdk@^1.1.2":
+  "integrity" "sha512-9qVQ54RunyhqmIPA37EFD3MNg8hh6eHo0XHl4A58fxdZPyAznyMCSoRSrfAADBQ2+qrV0TFkJ9f7L4BhN61iYw=="
+  "resolved" "https://registry.npmjs.org/dev-bitrielswap-sdk/-/dev-bitrielswap-sdk-1.1.2.tgz"
+  "version" "1.1.2"
   dependencies:
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"
