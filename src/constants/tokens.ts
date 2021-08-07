@@ -1,5 +1,5 @@
 import { Token, Ether } from '@uniswap/sdk-core'
-import { ChainId, WETH9 } from 'dev-bitrielswap-sdk'
+import { ChainId, WETH9 } from '@bitriel/bitrielswap-sdk'
 import { UNI_ADDRESS, SEL_ADDRESS } from './addresses'
 
 export const BSC: { [key: string]: Token } = {

@@ -1,4 +1,4 @@
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import BSC from './bsc'
 import KOVAN from './kovan'
 import MAINNET from './mainnet'

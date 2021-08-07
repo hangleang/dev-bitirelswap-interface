@@ -1,6 +1,6 @@
 import { useActiveWeb3React } from 'hooks/web3'
 import { Redirect, RouteComponentProps } from 'react-router-dom'
-import { WNATIVE } from 'dev-bitrielswap-sdk'
+import { WNATIVE } from '@bitriel/bitrielswap-sdk'
 import AddLiquidity from './index'
 
 export function RedirectDuplicateTokenIds(

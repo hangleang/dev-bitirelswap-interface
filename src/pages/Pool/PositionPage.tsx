@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { ChainId, WNATIVE, NonfungiblePositionManager, Pool, Position } from 'dev-bitrielswap-sdk'
+import { ChainId, WNATIVE, NonfungiblePositionManager, Pool, Position } from '@bitriel/bitrielswap-sdk'
 
 import { PoolState, usePool } from 'hooks/usePools'
 import { useToken } from 'hooks/Tokens'

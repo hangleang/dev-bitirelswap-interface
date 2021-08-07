@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import JSBI from 'jsbi'
-import { Trade as V3Trade, ChainId } from 'dev-bitrielswap-sdk'
+import { Trade as V3Trade, ChainId } from '@bitriel/bitrielswap-sdk'
 import { useBestV3TradeExactIn, useBestV3TradeExactOut, V3TradeState } from '../../hooks/useBestV3Trade'
 import useENS from '../../hooks/useENS'
 import { parseUnits } from '@ethersproject/units'

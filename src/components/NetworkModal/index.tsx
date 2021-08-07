@@ -1,4 +1,4 @@
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import Cookie from 'js-cookie'
 
 import { NETWORK_ICON, NETWORK_LABELS } from '../../constants/chains'

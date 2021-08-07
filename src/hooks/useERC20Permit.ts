@@ -1,7 +1,7 @@
 import JSBI from 'jsbi'
 import { Percent, CurrencyAmount, Currency, TradeType, Token } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { Trade as V3Trade } from 'dev-bitrielswap-sdk'
+import { Trade as V3Trade } from '@bitriel/bitrielswap-sdk'
 import { splitSignature } from 'ethers/lib/utils'
 import { useMemo, useState } from 'react'
 import { SWAP_ROUTER_ADDRESSES } from '../constants/addresses'

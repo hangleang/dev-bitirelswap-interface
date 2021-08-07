@@ -1,5 +1,5 @@
 import { Currency } from '@uniswap/sdk-core'
-import { Pool, Route } from 'dev-bitrielswap-sdk'
+import { Pool, Route } from '@bitriel/bitrielswap-sdk'
 import { useMemo } from 'react'
 import { useUserSingleHopOnly } from '../state/user/hooks'
 import { useActiveWeb3React } from './web3'

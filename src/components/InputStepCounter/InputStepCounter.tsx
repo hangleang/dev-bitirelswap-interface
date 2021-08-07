@@ -6,7 +6,7 @@ import styled, { keyframes } from 'styled-components'
 import { TYPE } from 'theme'
 import { AutoColumn } from 'components/Column'
 import { ButtonPrimary } from 'components/Button'
-import { FeeAmount } from 'dev-bitrielswap-sdk'
+import { FeeAmount } from '@bitriel/bitrielswap-sdk'
 import { formattedFeeAmount } from 'utils'
 import { Trans } from '@lingui/macro'
 

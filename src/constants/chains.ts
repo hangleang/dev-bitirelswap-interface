@@ -1,4 +1,4 @@
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 
 const Arbitrum = '/images/networks/arbitrum-network.svg'
 const Bsc = '/images/networks/bsc-network.jpeg'

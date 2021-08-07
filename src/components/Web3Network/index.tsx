@@ -1,4 +1,4 @@
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { L2_CHAIN_IDS, L2_INFO, NETWORK_ICON, NETWORK_LABELS } from 'constants/chains'
 import { useEffect, useRef, useState } from 'react'
 import { ArrowDownCircle } from 'react-feather'

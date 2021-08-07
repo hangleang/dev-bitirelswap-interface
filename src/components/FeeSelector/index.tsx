@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { FeeAmount } from 'dev-bitrielswap-sdk'
+import { FeeAmount } from '@bitriel/bitrielswap-sdk'
 import { Token } from '@uniswap/sdk-core'
 import { Trans } from '@lingui/macro'
 import { AutoColumn } from 'components/Column'

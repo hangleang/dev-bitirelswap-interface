@@ -1,5 +1,5 @@
 import { Currency, Token } from '@uniswap/sdk-core'
-import { FeeAmount, Pool } from 'dev-bitrielswap-sdk'
+import { FeeAmount, Pool } from '@bitriel/bitrielswap-sdk'
 import { useMemo } from 'react'
 import { useAllCurrencyCombinations } from './useAllCurrencyCombinations'
 import { PoolState, usePools } from './usePools'

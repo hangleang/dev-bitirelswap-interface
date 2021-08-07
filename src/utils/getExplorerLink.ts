@@ -1,4 +1,4 @@
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { MAINNET_AND_TESTNETS } from 'constants/chains'
 
 const ETHERSCAN_PREFIXES: { [chainId: number]: string } = {

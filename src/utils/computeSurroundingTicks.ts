@@ -1,5 +1,5 @@
 import { Token } from '@uniswap/sdk-core'
-import { tickToPrice } from 'dev-bitrielswap-sdk'
+import { tickToPrice } from '@bitriel/bitrielswap-sdk'
 import { TickProcessed } from 'hooks/usePoolTickData'
 import JSBI from 'jsbi'
 import { AllV3TicksQuery } from 'state/data/generated'

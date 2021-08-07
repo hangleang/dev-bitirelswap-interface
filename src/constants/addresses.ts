@@ -1,5 +1,5 @@
 import { FACTORY_ADDRESS as V2_FACTORY_ADDRESS } from '@uniswap/v2-sdk'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { constructSameAddressMap } from '../utils/constructSameAddressMap'
 
 export {
@@ -9,7 +9,7 @@ export {
   SWAP_ROUTER_ADDRESS as SWAP_ROUTER_ADDRESSES,
   MIGRATOR_ADDRESS as V3_MIGRATOR_ADDRESSES,
   FACTORY_ADDRESS as V3_CORE_FACTORY_ADDRESSES,
-} from 'dev-bitrielswap-sdk'
+} from '@bitriel/bitrielswap-sdk'
 
 type AddressMap = { [chainId: number]: string }
 

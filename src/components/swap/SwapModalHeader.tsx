@@ -1,6 +1,6 @@
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { Trade as V3Trade } from 'dev-bitrielswap-sdk'
+import { Trade as V3Trade } from '@bitriel/bitrielswap-sdk'
 import { useContext, useState } from 'react'
 import { ArrowDown, AlertTriangle } from 'react-feather'
 import { Text } from 'rebass'

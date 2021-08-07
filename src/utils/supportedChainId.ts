@@ -1,4 +1,4 @@
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 
 /**
  * Returns the input chain ID if chain is supported. If not, return undefined

@@ -1,5 +1,5 @@
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
-import { ChainId, encodeRouteToPath, Route, Trade } from 'dev-bitrielswap-sdk'
+import { ChainId, encodeRouteToPath, Route, Trade } from '@bitriel/bitrielswap-sdk'
 import { BigNumber } from 'ethers'
 import { useMemo } from 'react'
 import { useSingleContractMultipleData } from '../state/multicall/hooks'

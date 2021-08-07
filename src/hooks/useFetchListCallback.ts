@@ -1,6 +1,6 @@
 import { nanoid } from '@reduxjs/toolkit'
 import { TokenList } from '@uniswap/token-lists'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { useCallback } from 'react'
 
 import { getNetworkLibrary } from '../connectors'

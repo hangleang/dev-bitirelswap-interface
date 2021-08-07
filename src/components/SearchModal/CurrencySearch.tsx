@@ -1,5 +1,5 @@
 import { Currency, Token } from '@uniswap/sdk-core'
-import { ChainId, NATIVE } from 'dev-bitrielswap-sdk'
+import { ChainId, NATIVE } from '@bitriel/bitrielswap-sdk'
 import { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactGA from 'react-ga'
 import { t, Trans } from '@lingui/macro'

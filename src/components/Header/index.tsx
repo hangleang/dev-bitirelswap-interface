@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
 import useScrollPosition from '@react-hook/window-scroll'
-import { NATIVE, ChainId } from 'dev-bitrielswap-sdk'
+import { NATIVE, ChainId } from '@bitriel/bitrielswap-sdk'
 import { darken } from 'polished'
 import { useState } from 'react'
 import { Moon, Sun } from 'react-feather'

@@ -1,5 +1,5 @@
 import { Token, Price } from '@uniswap/sdk-core'
-import { tickToPrice } from 'dev-bitrielswap-sdk'
+import { tickToPrice } from '@bitriel/bitrielswap-sdk'
 
 export function getTickToPrice(baseToken?: Token, quoteToken?: Token, tick?: number): Price<Token, Token> | undefined {
   if (!baseToken || !quoteToken || typeof tick !== 'number') {

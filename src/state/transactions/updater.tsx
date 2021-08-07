@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { retry, RetryableError, RetryOptions } from '../../utils/retry'
 import { updateBlockNumber } from '../application/actions'

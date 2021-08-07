@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Position, WNATIVE } from 'dev-bitrielswap-sdk'
+import { Position, WNATIVE } from '@bitriel/bitrielswap-sdk'
 import Badge from 'components/Badge'
 import DoubleCurrencyLogo from 'components/DoubleLogo'
 import { usePool } from 'hooks/usePools'

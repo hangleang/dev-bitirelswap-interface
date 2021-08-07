@@ -44,7 +44,7 @@ import {
   useRangeHopCallbacks,
   useV3DerivedMintInfo,
 } from 'state/mint/v3/hooks'
-import { FeeAmount, NonfungiblePositionManager, WNATIVE } from 'dev-bitrielswap-sdk'
+import { FeeAmount, NonfungiblePositionManager, WNATIVE } from '@bitriel/bitrielswap-sdk'
 import { useV3PositionFromTokenId } from 'hooks/useV3Positions'
 import { useDerivedPositionInfo } from 'hooks/useDerivedPositionInfo'
 import { PositionPreview } from 'components/PositionPreview'

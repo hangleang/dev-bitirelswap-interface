@@ -1,4 +1,4 @@
-import { Pool, Position } from 'dev-bitrielswap-sdk'
+import { Pool, Position } from '@bitriel/bitrielswap-sdk'
 import { usePool } from 'hooks/usePools'
 import { PositionDetails } from 'types/position'
 import { useCurrency } from './Tokens'

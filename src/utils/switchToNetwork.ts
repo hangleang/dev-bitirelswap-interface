@@ -1,4 +1,4 @@
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { BigNumber, utils } from 'ethers'
 import { Web3Provider } from '@ethersproject/providers'
 

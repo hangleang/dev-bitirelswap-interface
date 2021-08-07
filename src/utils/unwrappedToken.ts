@@ -1,5 +1,5 @@
 import { Currency } from '@uniswap/sdk-core'
-import { NATIVE, WNATIVE, ChainId } from 'dev-bitrielswap-sdk'
+import { NATIVE, WNATIVE, ChainId } from '@bitriel/bitrielswap-sdk'
 import { supportedChainId } from './supportedChainId'
 
 export function unwrappedToken(currency: Currency): Currency {

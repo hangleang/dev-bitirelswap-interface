@@ -1,5 +1,5 @@
 import { CurrencyAmount, Percent, Currency } from '@uniswap/sdk-core'
-import { Position } from 'dev-bitrielswap-sdk'
+import { Position } from '@bitriel/bitrielswap-sdk'
 import { usePool } from 'hooks/usePools'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useToken } from 'hooks/Tokens'

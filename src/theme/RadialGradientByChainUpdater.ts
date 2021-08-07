@@ -1,7 +1,7 @@
 import { useActiveWeb3React } from 'hooks/web3'
 import { useEffect } from 'react'
 import { useDarkModeManager } from 'state/user/hooks'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 
 const initialStyles = {
   width: '200vw',

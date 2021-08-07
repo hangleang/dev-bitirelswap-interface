@@ -1,5 +1,5 @@
 import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
-import { ChainId, NATIVE } from 'dev-bitrielswap-sdk'
+import { ChainId, NATIVE } from '@bitriel/bitrielswap-sdk'
 import JSBI from 'jsbi'
 import { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'

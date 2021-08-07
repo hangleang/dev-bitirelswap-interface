@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { Trade as V3Trade } from 'dev-bitrielswap-sdk'
+import { Trade as V3Trade } from '@bitriel/bitrielswap-sdk'
 import { NetworkAlert } from 'components/NetworkAlert/NetworkAlert'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'

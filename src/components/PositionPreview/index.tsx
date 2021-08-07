@@ -1,5 +1,5 @@
 import { useState, useCallback, useContext, ReactNode } from 'react'
-import { Position } from 'dev-bitrielswap-sdk'
+import { Position } from '@bitriel/bitrielswap-sdk'
 import { LightCard } from 'components/Card'
 import { AutoColumn } from 'components/Column'
 import { TYPE } from 'theme'

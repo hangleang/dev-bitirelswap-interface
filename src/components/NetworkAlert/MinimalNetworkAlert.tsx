@@ -6,7 +6,7 @@ import {
   OptimismWrapperBackgroundLightMode,
 } from 'components/NetworkAlert/NetworkAlert'
 import { L2_CHAIN_IDS, L2_INFO, NETWORK_LABELS } from 'constants/chains'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { useActiveWeb3React } from 'hooks/web3'
 import { ArrowDownCircle } from 'react-feather'
 import { useArbitrumAlphaAlert, useDarkModeManager } from 'state/user/hooks'

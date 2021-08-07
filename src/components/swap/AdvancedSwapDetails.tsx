@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { Percent, Currency, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { Trade as V3Trade } from 'dev-bitrielswap-sdk'
+import { Trade as V3Trade } from '@bitriel/bitrielswap-sdk'
 import { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
 import { TYPE } from '../../theme'

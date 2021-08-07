@@ -19,7 +19,7 @@ import Row, { RowBetween, RowFixed } from '../../components/Row'
 
 import Slider from '../../components/Slider'
 import CurrencyLogo from '../../components/CurrencyLogo'
-import { WNATIVE, NATIVE, ChainId } from 'dev-bitrielswap-sdk'
+import { WNATIVE, NATIVE, ChainId } from '@bitriel/bitrielswap-sdk'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useCurrency } from '../../hooks/Tokens'
 import { usePairContract, useV2RouterContract } from '../../hooks/useContract'

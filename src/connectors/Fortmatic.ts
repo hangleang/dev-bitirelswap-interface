@@ -1,5 +1,5 @@
 import { FortmaticConnector as FortmaticConnectorCore } from '@web3-react/fortmatic-connector'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 

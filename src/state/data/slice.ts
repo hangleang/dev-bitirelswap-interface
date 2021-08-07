@@ -1,6 +1,6 @@
 import { BaseQueryApi, BaseQueryFn } from '@reduxjs/toolkit/dist/query/baseQueryTypes'
 import { createApi } from '@reduxjs/toolkit/query/react'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { DocumentNode } from 'graphql'
 import { ClientError, gql, GraphQLClient } from 'graphql-request'
 import { AppState } from 'state'

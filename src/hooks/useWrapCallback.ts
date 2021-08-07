@@ -1,6 +1,6 @@
 import { Currency } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
-import { WNATIVE, NATIVE, ChainId } from 'dev-bitrielswap-sdk'
+import { WNATIVE, NATIVE, ChainId } from '@bitriel/bitrielswap-sdk'
 import { tryParseAmount } from '../state/swap/hooks'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { useCurrencyBalance } from '../state/wallet/hooks'

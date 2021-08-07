@@ -2,7 +2,7 @@ import { Field, Bound } from '../../state/mint/v3/actions'
 import { AutoColumn } from 'components/Column'
 import styled from 'styled-components/macro'
 import { Currency, CurrencyAmount, Price } from '@uniswap/sdk-core'
-import { Position } from 'dev-bitrielswap-sdk'
+import { Position } from '@bitriel/bitrielswap-sdk'
 import { PositionPreview } from 'components/PositionPreview'
 
 const Wrapper = styled.div`

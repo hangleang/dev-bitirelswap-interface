@@ -19,7 +19,7 @@ import {
   SEL,
 } from './tokens'
 import { Currency, Token } from '@uniswap/sdk-core'
-import { ChainId, WNATIVE } from 'dev-bitrielswap-sdk'
+import { ChainId, WNATIVE } from '@bitriel/bitrielswap-sdk'
 
 type ChainTokenList = {
   readonly [chainId: number]: Token[]

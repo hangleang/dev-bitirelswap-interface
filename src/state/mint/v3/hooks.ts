@@ -13,7 +13,7 @@ import {
   TICK_SPACINGS,
   encodeSqrtRatioX96,
   nearestUsableTick,
-} from 'dev-bitrielswap-sdk/dist/'
+} from '@bitriel/bitrielswap-sdk/dist/'
 import { Currency, Token, CurrencyAmount, Price, Rounding } from '@uniswap/sdk-core'
 import { useCallback, useMemo } from 'react'
 import { useActiveWeb3React } from '../../../hooks/web3'

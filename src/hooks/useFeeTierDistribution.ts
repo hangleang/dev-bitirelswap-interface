@@ -1,4 +1,4 @@
-import { FeeAmount } from 'dev-bitrielswap-sdk'
+import { FeeAmount } from '@bitriel/bitrielswap-sdk'
 import { Token } from '@uniswap/sdk-core'
 import { useFeeTierDistributionQuery } from 'state/data/enhanced'
 import { skipToken } from '@reduxjs/toolkit/query/react'

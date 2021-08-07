@@ -1,5 +1,5 @@
 import { Currency, Token } from '@uniswap/sdk-core'
-import { ChainId, WNATIVE } from 'dev-bitrielswap-sdk'
+import { ChainId, WNATIVE } from '@bitriel/bitrielswap-sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components/macro'
 import useHttpLocations from '../../hooks/useHttpLocations'

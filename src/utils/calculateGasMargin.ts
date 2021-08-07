@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 
 // add 20%
 export function calculateGasMargin(chainId: ChainId | number | undefined, value: BigNumber): BigNumber {

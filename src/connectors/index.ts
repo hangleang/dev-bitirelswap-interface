@@ -1,5 +1,5 @@
 import { Web3Provider } from '@ethersproject/providers'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'

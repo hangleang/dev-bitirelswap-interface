@@ -4,7 +4,7 @@ import {
   TIMELOCK_ADDRESS,
   UNI_ADDRESS,
 } from './addresses'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 
 export const COMMON_CONTRACT_NAMES: Record<number, { [address: string]: string }> = {
   [ChainId.MAINNET]: {

@@ -1,6 +1,6 @@
 import { Currency, CurrencyAmount, Price, Token } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { USDC_ARBITRUM, DAI_OPTIMISM } from '../constants/tokens'
 import { useV2TradeExactOut } from './useV2Trade'
 import { useBestV3TradeExactOut } from './useBestV3Trade'

@@ -1,4 +1,4 @@
-import { computePoolAddress } from 'dev-bitrielswap-sdk'
+import { computePoolAddress } from '@bitriel/bitrielswap-sdk'
 import { V3_CORE_FACTORY_ADDRESSES } from '../constants/addresses'
 import { IBitrielPoolStateInterface } from '../types/v3/IBitrielPoolState'
 import { Token, Currency } from '@uniswap/sdk-core'
@@ -6,8 +6,8 @@ import { useMemo } from 'react'
 import { useActiveWeb3React } from './web3'
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
 
-import { Pool, FeeAmount } from 'dev-bitrielswap-sdk'
-import { abi as IBitrielPoolStateABI } from 'dev-bitrielswap-core/build/contracts/IBitrielPoolState.json'
+import { Pool, FeeAmount } from '@bitriel/bitrielswap-sdk'
+import { abi as IBitrielPoolStateABI } from '@bitriel/bitrielswap-core/build/contracts/IBitrielPoolState.json'
 import { Interface } from '@ethersproject/abi'
 
 const POOL_STATE_INTERFACE = new Interface(IBitrielPoolStateABI) as IBitrielPoolStateInterface

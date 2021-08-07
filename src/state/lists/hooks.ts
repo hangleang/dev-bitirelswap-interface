@@ -1,5 +1,5 @@
-import DEFAULT_TOKEN_LIST from 'dev-bitrielswap-default-token-list'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import DEFAULT_TOKEN_LIST from '@bitriel/default-token-list'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useAppSelector } from 'state/hooks'

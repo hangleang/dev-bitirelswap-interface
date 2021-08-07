@@ -1,6 +1,6 @@
 import { Currency, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { Trade as V3Trade, FeeAmount } from 'dev-bitrielswap-sdk'
+import { Trade as V3Trade, FeeAmount } from '@bitriel/bitrielswap-sdk'
 import { Fragment, memo, useContext } from 'react'
 import { ChevronRight } from 'react-feather'
 import { Flex } from 'rebass'

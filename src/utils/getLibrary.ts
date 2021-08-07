@@ -1,5 +1,5 @@
 import { Web3Provider } from '@ethersproject/providers'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 
 const NETWORK_POLLING_INTERVALS: { [chainId: number]: number } = {
   [ChainId.ARBITRUM_ONE]: 1_000,

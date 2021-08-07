@@ -14,7 +14,7 @@ import {
 import { useActiveWeb3React } from 'hooks/web3'
 import { useCallback, useMemo } from 'react'
 import { calculateGasMargin } from 'utils/calculateGasMargin'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { UNISWAP_GRANTS_START_BLOCK } from '../../constants/proposals'
 import { UNI } from '../../constants/tokens'
 import { useLogs } from '../logs/hooks'

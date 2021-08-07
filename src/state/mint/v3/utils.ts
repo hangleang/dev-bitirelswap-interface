@@ -5,7 +5,7 @@ import {
   TICK_SPACINGS,
   encodeSqrtRatioX96,
   TickMath,
-} from 'dev-bitrielswap-sdk/dist/'
+} from '@bitriel/bitrielswap-sdk/dist/'
 import { Price, Token } from '@uniswap/sdk-core'
 import { tryParseAmount } from 'state/swap/hooks'
 import JSBI from 'jsbi'

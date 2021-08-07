@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro'
-import { ChainId } from 'dev-bitrielswap-sdk'
+import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { L2_CHAIN_IDS, NETWORK_LABELS } from 'constants/chains'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useCallback, useState } from 'react'
