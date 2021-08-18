@@ -8,6 +8,7 @@ const Mainnet = '/images/networks/mainnet-network.jpeg'
 const Rinkeby = '/images/networks/rinkeby-network.jpeg'
 const Ropsten = '/images/networks/ropsten-network.jpeg'
 const Optimism = '/images/networks/optimism-network.png'
+const Selendra = '/images/networks/selendra-network.jpeg'
 
 export const L2_CHAIN_IDS = [ChainId.ARBITRUM_ONE, ChainId.OPTIMISM]
 
@@ -38,6 +39,7 @@ export const NETWORK_LABELS: { [chainId in ChainId | number]: string } = {
   [ChainId.ARBITRUM_RINKEBY]: 'Arbitrum Rinkeby',
   [ChainId.OPTIMISM]: 'Optimism',
   [ChainId.OPTIMISTIC_KOVAN]: 'Optimism Kovan',
+  [ChainId.SEL_TESTNET]: 'Selendra Testnet',
 }
 
 export const NETWORK_ICON: { [chainId in ChainId | number]: string } = {
@@ -52,6 +54,7 @@ export const NETWORK_ICON: { [chainId in ChainId | number]: string } = {
   [ChainId.ARBITRUM_RINKEBY]: Arbitrum,
   [ChainId.OPTIMISM]: Optimism,
   [ChainId.OPTIMISTIC_KOVAN]: Optimism,
+  [ChainId.SEL_TESTNET]: Selendra,
 }
 
 export const BLOCKCHAIN: { [chainId in ChainId | number]: string } = {

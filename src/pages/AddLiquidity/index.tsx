@@ -1,4 +1,4 @@
-import { useCallback, useContext, useMemo, useState } from 'react'
+import { useCallback, useContext, useState } from 'react'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import { AlertTriangle, AlertCircle } from 'react-feather'
@@ -83,16 +83,12 @@ export default function AddLiquidity({
       ? parseFloat(feeAmountFromUrl)
       : undefined
 
-  const currencyA = useCurrency(currencyIdA)
+  const baseCurrency = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
 
-  // keep track for UI display purposes of user selected base currency
-  const baseCurrency = currencyA
-  const quoteCurrency = useMemo(
-    () =>
-      currencyA && currencyB && baseCurrency ? (baseCurrency.equals(currencyA) ? currencyB : currencyA) : undefined,
-    [currencyA, currencyB, baseCurrency]
-  )
+  // prevent an error if they input ETH/WETH
+  const quoteCurrency =
+    baseCurrency && currencyB && baseCurrency.wrapped.equals(currencyB.wrapped) ? undefined : currencyB
 
   // mint state
   const { independentField, typedValue, startPriceTypedValue } = useV3MintState()
@@ -117,8 +113,8 @@ export default function AddLiquidity({
     invertPrice,
     ticksAtLimit,
   } = useV3DerivedMintInfo(
-    currencyA ?? undefined,
-    currencyB ?? undefined,
+    baseCurrency ?? undefined,
+    quoteCurrency ?? undefined,
     feeAmount,
     baseCurrency ?? undefined,
     existingPosition
@@ -189,12 +185,12 @@ export default function AddLiquidity({
   async function onAdd() {
     if (!chainId || !library || !account) return
 
-    if (!positionManager || !currencyA || !currencyB) {
+    if (!positionManager || !baseCurrency || !quoteCurrency) {
       return
     }
 
     if (position && account && deadline) {
-      const useNative = currencyA.isNative ? currencyA : currencyB.isNative ? currencyB : undefined
+      const useNative = baseCurrency.isNative ? baseCurrency : quoteCurrency.isNative ? quoteCurrency : undefined
       const { calldata, value } =
         hasExistingPosition && tokenId
           ? NonfungiblePositionManager.addCallParameters(position, {
@@ -211,42 +207,44 @@ export default function AddLiquidity({
               createPool: noLiquidity,
             })
 
-      let txn: { to: string; data: string; value: string } = {
+      const txn: { to: string; data: string; value: string } = {
         to: NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId],
         data: calldata,
         value,
       }
 
-      if (argentWalletContract) {
-        const amountA = parsedAmounts[Field.CURRENCY_A]
-        const amountB = parsedAmounts[Field.CURRENCY_B]
-        const batch = [
-          ...(amountA && amountA.currency.isToken
-            ? [approveAmountCalldata(amountA, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
-            : []),
-          ...(amountB && amountB.currency.isToken
-            ? [approveAmountCalldata(amountB, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
-            : []),
-          {
-            to: txn.to,
-            data: txn.data,
-            value: txn.value,
-          },
-        ]
-        const data = argentWalletContract.interface.encodeFunctionData('wc_multiCall', [batch])
-        txn = {
-          to: argentWalletContract.address,
-          data,
-          value: '0x0',
-        }
-      }
+      // if (argentWalletContract) {
+      //   const amountA = parsedAmounts[Field.CURRENCY_A]
+      //   const amountB = parsedAmounts[Field.CURRENCY_B]
+      //   const batch = [
+      //     ...(amountA && amountA.currency.isToken
+      //       ? [approveAmountCalldata(amountA, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
+      //       : []),
+      //     ...(amountB && amountB.currency.isToken
+      //       ? [approveAmountCalldata(amountB, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
+      //       : []),
+      //     {
+      //       to: txn.to,
+      //       data: txn.data,
+      //       value: txn.value,
+      //     },
+      //   ]
+      //   const data = argentWalletContract.interface.encodeFunctionData('wc_multiCall', [batch])
+      //   txn = {
+      //     to: argentWalletContract.address,
+      //     data,
+      //     value: '0x0',
+      //   }
+      // }
 
       setAttemptingTxn(true)
 
+      console.log('before send transaction')
       library
         .getSigner()
         .estimateGas(txn)
         .then((estimate) => {
+          console.log(`gas: ${estimate}`)
           const newTxn = {
             ...txn,
             gasLimit: calculateGasMargin(chainId, estimate),
@@ -259,8 +257,8 @@ export default function AddLiquidity({
               setAttemptingTxn(false)
               addTransaction(response, {
                 summary: noLiquidity
-                  ? t`Create pool and add ${currencyA?.symbol}/${currencyB?.symbol} V3 liquidity`
-                  : t`Add ${currencyA?.symbol}/${currencyB?.symbol} V3 liquidity`,
+                  ? t`Create pool and add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`
+                  : t`Add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`,
               })
               setTxHash(response.hash)
               ReactGA.event({
@@ -473,11 +471,11 @@ export default function AddLiquidity({
                     </RowBetween>
 
                     <FeeSelector
-                      disabled={!currencyB || !currencyA}
+                      disabled={!quoteCurrency || !baseCurrency}
                       feeAmount={feeAmount}
                       handleFeePoolSelect={handleFeePoolSelect}
-                      token0={currencyA?.wrapped}
-                      token1={currencyB?.wrapped}
+                      token0={baseCurrency?.wrapped}
+                      token1={quoteCurrency?.wrapped}
                     />
                   </AutoColumn>{' '}
                 </>
@@ -493,7 +491,7 @@ export default function AddLiquidity({
               ) : (
                 <>
                   {noLiquidity && (
-                    <DynamicSection disabled={!currencyA || !currencyB}>
+                    <DynamicSection disabled={!baseCurrency || !quoteCurrency}>
                       <AutoColumn gap="md">
                         <RowBetween>
                           <TYPE.label>

@@ -1,6 +1,6 @@
 import { Token, Ether } from '@uniswap/sdk-core'
 import { ChainId, WETH9 } from '@bitriel/bitrielswap-sdk'
-import { UNI_ADDRESS, SEL_ADDRESS } from './addresses'
+import { UNI_ADDRESS, BTR_ADDRESS } from './addresses'
 
 export const BSC: { [key: string]: Token } = {
   DAI: new Token(ChainId.BSC, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'Dai Stablecoin'),
@@ -61,15 +61,11 @@ export const UNI: { [chainId: number]: Token } = {
   [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS[ChainId.KOVAN], 18, 'UNI', 'Uniswap'),
 }
 
-export const SEL: { [chainId: number]: Token } = {
-  [ChainId.BSC]: new Token(ChainId.BSC, SEL_ADDRESS[ChainId.BSC], 18, 'SEL', 'Selendra'),
-  [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, SEL_ADDRESS[ChainId.BSC_TESTNET], 18, 'SEL', 'Selendra'),
+export const BTR: { [chainId: number]: Token } = {
+  [ChainId.BSC]: new Token(ChainId.BSC, BTR_ADDRESS[ChainId.BSC], 18, 'SEL', 'Selendra'),
+  [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, BTR_ADDRESS[ChainId.BSC_TESTNET], 18, 'SEL', 'Selendra'),
+  [ChainId.SEL_TESTNET]: new Token(ChainId.SEL_TESTNET, BTR_ADDRESS[ChainId.SEL_TESTNET], 18, 'Kum', 'Kumandra'),
 }
-
-// export const BTR: { [chainId: number]: Token } = {
-//   [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS[42], 18, 'BTR', 'Bitriel'),
-//   [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, UNI_ADDRESS[97], 18, 'BTR', 'Bitriel'),
-// }
 
 export class ExtendedEther extends Ether {
   public get wrapped(): Token {

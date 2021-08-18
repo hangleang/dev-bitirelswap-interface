@@ -30,6 +30,7 @@ function getCurrencyLogoUrls(currency: Token) {
 
 const EthereumLogo = 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png'
 const BinanceLogo = 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/binance/info/logo.png'
+const SelendraLogo = 'images/networks/selendra-network.jpeg'
 
 const logo: { readonly [chainId in ChainId | number]: string } = {
   ...constructSameAddressMap(EthereumLogo as string, [
@@ -40,6 +41,7 @@ const logo: { readonly [chainId in ChainId | number]: string } = {
   ]),
   [ChainId.BSC]: BinanceLogo,
   [ChainId.BSC_TESTNET]: BinanceLogo,
+  [ChainId.SEL_TESTNET]: SelendraLogo,
 }
 
 const StyledLogo = styled(Logo)<{ size: string }>`
