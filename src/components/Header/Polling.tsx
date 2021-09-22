@@ -75,7 +75,7 @@ export default function Polling() {
   useEffect(
     () => {
       if (!blockNumber) {
-        return
+        return null
       }
 
       setIsMounting(true)

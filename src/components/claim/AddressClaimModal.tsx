@@ -110,7 +110,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
                 <CloseIcon onClick={wrappedOnDismiss} style={{ zIndex: 99 }} stroke="white" />
               </RowBetween>
               <TYPE.white fontWeight={700} fontSize={36}>
-                <Trans>{unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} UNI</Trans>
+                <Trans>{unclaimedAmount?.toFixed(0, { groupSeparator: ',' })} UNI</Trans>
               </TYPE.white>
             </CardSection>
             <Break />
@@ -163,7 +163,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
               </TYPE.largeHeader>
               {!claimConfirmed && (
                 <Text fontSize={36} color={'#ff007a'} fontWeight={800}>
-                  <Trans>{unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} UNI</Trans>
+                  <Trans>{unclaimedAmount?.toFixed(0, { groupSeparator: ',' })} UNI</Trans>
                 </Text>
               )}
               {parsedAddress && (

@@ -61,7 +61,7 @@ const LineChart = ({
   const isClient = typeof window === 'object'
   useEffect(() => {
     if (!isClient) {
-      return
+      return null
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)

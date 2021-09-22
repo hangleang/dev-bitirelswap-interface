@@ -69,7 +69,7 @@ export default function Updater(): null {
   )
 
   useEffect(() => {
-    if (!chainId || !library || !lastBlockNumber) return
+    if (!chainId || !library || !lastBlockNumber) return null
 
     const cancels = Object.keys(transactions)
       .filter((hash) => shouldCheck(lastBlockNumber, transactions[hash]))

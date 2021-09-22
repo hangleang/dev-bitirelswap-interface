@@ -105,6 +105,14 @@ interface ArgentWalletDetectorInterface extends ethers.utils.Interface {
   getEvent(nameOrSignatureOrTopic: "OwnerChanged"): EventFragment;
 }
 
+export type CodeAddedEvent = TypedEvent<[string] & { code: string }>;
+
+export type ImplementationAddedEvent = TypedEvent<
+  [string] & { implementation: string }
+>;
+
+export type OwnerChangedEvent = TypedEvent<[string] & { _newOwner: string }>;
+
 export class ArgentWalletDetector extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
@@ -264,13 +272,25 @@ export class ArgentWalletDetector extends BaseContract {
   };
 
   filters: {
+    "CodeAdded(bytes32)"(
+      code?: BytesLike | null
+    ): TypedEventFilter<[string], { code: string }>;
+
     CodeAdded(
       code?: BytesLike | null
     ): TypedEventFilter<[string], { code: string }>;
 
+    "ImplementationAdded(address)"(
+      implementation?: string | null
+    ): TypedEventFilter<[string], { implementation: string }>;
+
     ImplementationAdded(
       implementation?: string | null
     ): TypedEventFilter<[string], { implementation: string }>;
+
+    "OwnerChanged(address)"(
+      _newOwner?: string | null
+    ): TypedEventFilter<[string], { _newOwner: string }>;
 
     OwnerChanged(
       _newOwner?: string | null

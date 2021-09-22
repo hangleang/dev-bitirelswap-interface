@@ -10,7 +10,7 @@ import { AppState } from '../index'
 import { errorFetchingMulticallResults, fetchingMulticallResults, updateMulticallResults } from './actions'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 import { Call, parseCallKey } from './utils'
-import { BitrielSwapInterfaceMulticall } from 'types/v3'
+import { BitrielSwapInterfaceMulticall } from 'types/v3/BitrielSwapInterfaceMulticall'
 
 const DEFAULT_GAS_REQUIRED = 1_000_000
 

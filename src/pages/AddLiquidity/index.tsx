@@ -1,4 +1,4 @@
-import { useCallback, useContext, useState } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import { AlertTriangle, AlertCircle } from 'react-feather'
@@ -83,12 +83,16 @@ export default function AddLiquidity({
       ? parseFloat(feeAmountFromUrl)
       : undefined
 
-  const baseCurrency = useCurrency(currencyIdA)
+  const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
 
-  // prevent an error if they input ETH/WETH
-  const quoteCurrency =
-    baseCurrency && currencyB && baseCurrency.wrapped.equals(currencyB.wrapped) ? undefined : currencyB
+  // keep track for UI display purposes of user selected base currency
+  const baseCurrency = currencyA
+  const quoteCurrency = useMemo(
+    () =>
+      currencyA && currencyB && baseCurrency ? (baseCurrency.equals(currencyA) ? currencyB : currencyA) : undefined,
+    [currencyA, currencyB, baseCurrency]
+  )
 
   // mint state
   const { independentField, typedValue, startPriceTypedValue } = useV3MintState()
@@ -113,8 +117,8 @@ export default function AddLiquidity({
     invertPrice,
     ticksAtLimit,
   } = useV3DerivedMintInfo(
-    baseCurrency ?? undefined,
-    quoteCurrency ?? undefined,
+    currencyA ?? undefined,
+    currencyB ?? undefined,
     feeAmount,
     baseCurrency ?? undefined,
     existingPosition
@@ -185,12 +189,13 @@ export default function AddLiquidity({
   async function onAdd() {
     if (!chainId || !library || !account) return
 
-    if (!positionManager || !baseCurrency || !quoteCurrency) {
+    if (!positionManager || !currencyA || !currencyB) {
       return
     }
 
     if (position && account && deadline) {
-      const useNative = baseCurrency.isNative ? baseCurrency : quoteCurrency.isNative ? quoteCurrency : undefined
+      console.log(position)
+      const useNative = currencyA.isNative ? currencyA : currencyB.isNative ? currencyB : undefined
       const { calldata, value } =
         hasExistingPosition && tokenId
           ? NonfungiblePositionManager.addCallParameters(position, {
@@ -207,44 +212,41 @@ export default function AddLiquidity({
               createPool: noLiquidity,
             })
 
-      const txn: { to: string; data: string; value: string } = {
+      let txn: { to: string; data: string; value: string } = {
         to: NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId],
         data: calldata,
         value,
       }
 
-      // if (argentWalletContract) {
-      //   const amountA = parsedAmounts[Field.CURRENCY_A]
-      //   const amountB = parsedAmounts[Field.CURRENCY_B]
-      //   const batch = [
-      //     ...(amountA && amountA.currency.isToken
-      //       ? [approveAmountCalldata(amountA, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
-      //       : []),
-      //     ...(amountB && amountB.currency.isToken
-      //       ? [approveAmountCalldata(amountB, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
-      //       : []),
-      //     {
-      //       to: txn.to,
-      //       data: txn.data,
-      //       value: txn.value,
-      //     },
-      //   ]
-      //   const data = argentWalletContract.interface.encodeFunctionData('wc_multiCall', [batch])
-      //   txn = {
-      //     to: argentWalletContract.address,
-      //     data,
-      //     value: '0x0',
-      //   }
-      // }
+      if (argentWalletContract) {
+        const amountA = parsedAmounts[Field.CURRENCY_A]
+        const amountB = parsedAmounts[Field.CURRENCY_B]
+        const batch = [
+          ...(amountA && amountA.currency.isToken
+            ? [approveAmountCalldata(amountA, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
+            : []),
+          ...(amountB && amountB.currency.isToken
+            ? [approveAmountCalldata(amountB, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId])]
+            : []),
+          {
+            to: txn.to,
+            data: txn.data,
+            value: txn.value,
+          },
+        ]
+        const data = argentWalletContract.interface.encodeFunctionData('wc_multiCall', [batch])
+        txn = {
+          to: argentWalletContract.address,
+          data,
+          value: '0x0',
+        }
+      }
 
       setAttemptingTxn(true)
-
-      console.log('before send transaction')
       library
         .getSigner()
         .estimateGas(txn)
-        .then((estimate) => {
-          console.log(`gas: ${estimate}`)
+        .then(async (estimate) => {
           const newTxn = {
             ...txn,
             gasLimit: calculateGasMargin(chainId, estimate),
@@ -471,11 +473,11 @@ export default function AddLiquidity({
                     </RowBetween>
 
                     <FeeSelector
-                      disabled={!quoteCurrency || !baseCurrency}
+                      disabled={!currencyB || !currencyA}
                       feeAmount={feeAmount}
                       handleFeePoolSelect={handleFeePoolSelect}
-                      token0={baseCurrency?.wrapped}
-                      token1={quoteCurrency?.wrapped}
+                      currencyA={currencyA ?? undefined}
+                      currencyB={currencyB ?? undefined}
                     />
                   </AutoColumn>{' '}
                 </>

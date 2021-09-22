@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { FeeAmount } from '@bitriel/bitrielswap-sdk'
-import { Token } from '@uniswap/sdk-core'
+import { Currency } from '@uniswap/sdk-core'
 import { Trans } from '@lingui/macro'
 import { AutoColumn } from 'components/Column'
 import { DynamicSection } from 'pages/AddLiquidity/styled'
@@ -72,16 +72,16 @@ export default function FeeSelector({
   disabled = false,
   feeAmount,
   handleFeePoolSelect,
-  token0,
-  token1,
+  currencyA,
+  currencyB,
 }: {
   disabled?: boolean
   feeAmount?: FeeAmount
   handleFeePoolSelect: (feeAmount: FeeAmount) => void
-  token0?: Token | undefined
-  token1?: Token | undefined
+  currencyA?: Currency | undefined
+  currencyB?: Currency | undefined
 }) {
-  const { isLoading, isError, largestUsageFeeTier, distributions } = useFeeTierDistribution(token0, token1)
+  const { isLoading, isError, largestUsageFeeTier, distributions } = useFeeTierDistribution(currencyA, currencyB)
 
   const [showOptions, setShowOptions] = useState(false)
   const [pulsing, setPulsing] = useState(false)

@@ -35,7 +35,7 @@ export function useLogs(filter: EventFilter | undefined): UseLogsResult {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    if (!filter || !chainId) return
+    if (!filter || !chainId) return null
 
     dispatch(addListener({ chainId, filter }))
     return () => {

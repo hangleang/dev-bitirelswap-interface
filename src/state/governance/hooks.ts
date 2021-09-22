@@ -264,7 +264,7 @@ export function useVoteCallback(): {
 
   const voteCallback = useCallback(
     (proposalId: string | undefined, support: boolean) => {
-      if (!account || !latestGovernanceContract || !proposalId) return
+      if (!account || !latestGovernanceContract || !proposalId) return null
       const args = [proposalId, support]
       return latestGovernanceContract.estimateGas.castVote(...args, {}).then((estimatedGasLimit) => {
         return latestGovernanceContract

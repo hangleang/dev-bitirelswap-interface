@@ -175,7 +175,7 @@ function Web3Network(): JSX.Element | null {
       return
     }
     switchToNetwork({ library, chainId })
-      .then((x) => x ?? setImplements3085(true))
+      .then((x) => (x != null ? x : setImplements3085(true)))
       .catch(() => setImplements3085(false))
   }, [library, chainId])
 

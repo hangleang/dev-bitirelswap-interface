@@ -16,16 +16,16 @@ type AddressMap = { [chainId: number]: string }
 export const UNI_ADDRESS: AddressMap = constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984')
 export const BTR_ADDRESS: AddressMap = {
   [ChainId.BSC]: '0x288d3a87a87c284ed685e0490e5c4cc0883a060a',
-  [ChainId.BSC_TESTNET]: '0xDED2DEDf0cF48033cb50a4EF3e7587bAbc227151',
+  [ChainId.BSC_TESTNET]: '0xf0776746087Bda7DC9648B5C964048CE55453D23',
   [ChainId.SEL_TESTNET]: '0xd60ccFdf97985c2920d8E734c6352Aec85A9a4f3',
 }
 export const V2_FACTORY_ADDRESSES: AddressMap = {
   ...constructSameAddressMap(V2_FACTORY_ADDRESS),
-  [ChainId.BSC_TESTNET]: '0x927A548cD60c0A4b410c32178A88454A70B22fea',
+  [ChainId.BSC_TESTNET]: '0xc35DADB65012eC5796536bD9864eD8773aBc74C4',
 }
 export const V2_ROUTER_ADDRESS: AddressMap = {
   ...constructSameAddressMap('0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'),
-  [ChainId.BSC_TESTNET]: '0xDE0D6363aA17CA3ecCa3E6Bf4da90f5c904ED996',
+  [ChainId.BSC_TESTNET]: '0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506',
 }
 
 /**

@@ -1,5 +1,5 @@
 import { FeeAmount } from '@bitriel/bitrielswap-sdk'
-import { Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@uniswap/sdk-core'
 import { useFeeTierDistributionQuery } from 'state/data/enhanced'
 import { skipToken } from '@reduxjs/toolkit/query/react'
 import { reduce } from 'lodash'
@@ -25,8 +25,14 @@ interface FeeTierDistribution {
   }
 }
 
-export function useFeeTierDistribution(token0: Token | undefined, token1: Token | undefined): FeeTierDistribution {
-  const { isFetching, isLoading, isUninitialized, isError, distributions } = usePoolTVL(token0, token1)
+export function useFeeTierDistribution(
+  currencyA: Currency | undefined,
+  currencyB: Currency | undefined
+): FeeTierDistribution {
+  const { isFetching, isLoading, isUninitialized, isError, distributions } = usePoolTVL(
+    currencyA?.wrapped,
+    currencyB?.wrapped
+  )
 
   return useMemo(() => {
     if (isLoading || isFetching || isUninitialized || isError || !distributions) {
