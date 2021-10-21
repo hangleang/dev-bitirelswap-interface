@@ -102,7 +102,7 @@ function LiquidityInfo({
 }
 
 // hard-code this for now
-const percentageToMigrate = 100
+// const percentageToMigrate = 100
 
 function V2PairMigration({
   pair,
