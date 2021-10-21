@@ -135,7 +135,7 @@
   "scripts": {
     "compile-contract-types": "yarn compile-external-abi-types && yarn compile-v3-contract-types",
     "compile-external-abi-types": "typechain --target ethers-v5 --out-dir src/constants/abis/types './src/constants/abis/**/*.json'",
-    "compile-v3-contract-types": "typechain --target ethers-v5 --out-dir src/types/v3 './node_modules/@bitriel/bitrielswap-?(core|periphery)/build/contracts/**/*.json'",
+    "compile-v3-contract-types": "typechain --target ethers-v5 --out-dir src/types/v3 './node_modules/@bitriel/bitrielswap-?(core|periphery)/?(build|artifacts)/contracts/**/*.json'",
     "build": "yarn compile-contract-types && yarn graphql:generate && yarn i18n:extract && yarn i18n:compile && yarn tailwind && react-scripts build",
     "i18n:extract": "lingui extract --locale en-US",
     "i18n:compile": "lingui compile",
