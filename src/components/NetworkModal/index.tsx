@@ -66,7 +66,7 @@ const PARAMS: {
     blockExplorerUrls: ['https://optimistic.etherscan.io'],
   },
   [ChainId.SEL_TESTNET]: {
-    chainId: '0x7D0',
+    chainId: '0xDE',
     chainName: 'Selendra',
     nativeCurrency: {
       name: 'Selendra',
