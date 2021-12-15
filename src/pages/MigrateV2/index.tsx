@@ -125,8 +125,8 @@ export default function MigrateV2() {
 
           <TYPE.body style={{ marginBottom: 8, fontWeight: 400 }}>
             <Trans>
-              For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into
-              Uniswap V3.
+              For each pool shown below, click migrate to remove your liquidity from BitrielSwap V2 and deposit it into
+              BitrielSwap V3.
             </Trans>
           </TYPE.body>
 

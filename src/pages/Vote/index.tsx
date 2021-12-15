@@ -126,40 +126,6 @@ export default function Vote() {
           onDismiss={toggleDelegateModal}
           title={showUnlockVoting ? <Trans>Unlock Votes</Trans> : <Trans>Update Delegation</Trans>}
         />
-        <TopSection gap="md">
-          <VoteCard>
-            <CardBGImage />
-            <CardNoise />
-            <CardSection>
-              <AutoColumn gap="md">
-                <RowBetween>
-                  <TYPE.white fontWeight={600}>
-                    <Trans>Uniswap Governance</Trans>
-                  </TYPE.white>
-                </RowBetween>
-                <RowBetween>
-                  <TYPE.white fontSize={14}>
-                    <Trans>
-                      UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself
-                      or delegate your votes to a third party.
-                    </Trans>
-                  </TYPE.white>
-                </RowBetween>
-                <ExternalLink
-                  style={{ color: 'white', textDecoration: 'underline' }}
-                  href="https://uniswap.org/blog/uni"
-                  target="_blank"
-                >
-                  <TYPE.white fontSize={14}>
-                    <Trans>Read more about Uniswap governance</Trans>
-                  </TYPE.white>
-                </ExternalLink>
-              </AutoColumn>
-            </CardSection>
-            <CardBGImage />
-            <CardNoise />
-          </VoteCard>
-        </TopSection>
         <TopSection gap="2px">
           <WrapSmall>
             <TYPE.mediumHeader style={{ margin: '0.5rem 0.5rem 0.5rem 0', flexShrink: 0 }}>
@@ -246,7 +212,7 @@ export default function Vote() {
             })}
         </TopSection>
         <TYPE.subHeader color="text3">
-          <Trans>A minimum threshold of 0.25% of the total UNI supply is required to submit proposals</Trans>
+          <Trans>A minimum threshold of 0.25% of the total BTR supply is required to submit proposals</Trans>
         </TYPE.subHeader>
       </PageWrapper>
     </>

@@ -242,11 +242,15 @@ export default function AddLiquidity({
         }
       }
 
+      library.getBlock('latest').then((result) => console.log(result.gasLimit))
+
       setAttemptingTxn(true)
       library
         .getSigner()
         .estimateGas(txn)
         .then(async (estimate) => {
+          console.log(estimate)
+
           const newTxn = {
             ...txn,
             gasLimit: calculateGasMargin(chainId, estimate),

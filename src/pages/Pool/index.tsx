@@ -1,3 +1,4 @@
+import { ChainId, MIGRATOR_ADDRESS } from '@bitriel/bitrielswap-sdk'
 import { Trans } from '@lingui/macro'
 import { ButtonGray, ButtonOutlined, ButtonPrimary } from 'components/Button'
 import { AutoColumn } from 'components/Column'
@@ -6,6 +7,7 @@ import { SwapPoolTabs } from 'components/NavigationTabs'
 import PositionList from 'components/PositionList'
 import { RowBetween, RowFixed } from 'components/Row'
 import Toggle from 'components/Toggle'
+import { V3_MIGRATOR_ADDRESSES } from 'constants/addresses'
 import { L2_CHAIN_IDS } from 'constants/chains'
 import { useV3Positions } from 'hooks/useV3Positions'
 import { useActiveWeb3React } from 'hooks/web3'
@@ -17,7 +19,6 @@ import { useUserHideClosedPositions } from 'state/user/hooks'
 import styled, { ThemeContext } from 'styled-components'
 import { HideSmall, TYPE } from 'theme'
 import { PositionDetails } from 'types/position'
-import CTACards from './CTACards'
 import { LoadingRows } from './styleds'
 
 const PageWrapper = styled(AutoColumn)`
@@ -202,8 +203,6 @@ export default function Pool() {
                 </ResponsiveButtonPrimary>
               </ButtonRow>
             </TitleRow>
-
-            <CTACards />
 
             {closedPositions.length > 0 ? (
               <ShowInactiveToggle>
