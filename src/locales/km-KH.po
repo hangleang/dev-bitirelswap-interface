@@ -188,8 +188,8 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "អនុញ្ញាតឱ្យមានការជួញដូរផលប៉ះពាល់តម្លៃខ្ពស់ហើយរំលងអេក្រង់បញ្ជាក់។ ប្រើតាមហានិភ័យផ្ទាល់ខ្លួន។"
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "អនុញ្ញាតឱ្យពិធីការ Uniswap ប្រើ{0}របស់អ្នក"
+msgid "Allow the Bitriel Protocol to use your {0}"
+msgstr "អនុញ្ញាតឱ្យពិធីការ Bitriel ប្រើ{0}របស់អ្នក"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
 msgid "Allowed"

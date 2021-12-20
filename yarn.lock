@@ -1291,10 +1291,15 @@
   resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.8.tgz#afb97b4dc0f88bb8867b52a379e7bea152770d25"
   integrity sha512-FW0q9h+mohK+uOqlyhYoReLeQuL9Nvv5cnxq67WMTtQAb+sv1NsG8s4HrRwDYAZJSGH7jK7D5RWpnSz2Zna8Hw==
 
-"@bitriel/bitrielswap-sdk@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.4.tgz#3ee5a39d876567821388f9accdd22bad559e4987"
-  integrity sha512-2070tNZRvVU4ms4P7xXiIJ1cpxhKg+jfd8qH0MmDETtnjgNE6YcnCAA7ATgJ7iVaNgUEt8HGb9OdzjtKQt3v/w==
+"@bitriel/bitrielswap-periphery@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.9.tgz#7cc33f6eb9019f8357c554e6c9e9b3e1b7c0a4c7"
+  integrity sha512-GKiXNoUwzZ/beijyTY+sTThDaUhASMJRr/OHwzqDXP/rOH9msaCWYnpdz2fsxmGeGs1n9vhpUiowSy8K3ck/SA==
+
+"@bitriel/bitrielswap-sdk@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.6.tgz#862f2324e18fd3a66c042387dc39f0a578ad8dda"
+  integrity sha512-l13TQ3FZTpg0C3/XNcnN6AuA4qIThr7IU06FqxNJMGBzped4RVNexlKn9oIe62Fho1LtsZVEsOIkflGxia55DA==
   dependencies:
     "@bitriel/bitrielswap-core" "^1.0.1"
     "@bitriel/bitrielswap-periphery" "^1.1.8"
@@ -1304,10 +1309,10 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
-"@bitriel/default-token-list@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.0.5.tgz#c4eb1a880e7ed030aa73cdf6b580d7469a257df9"
-  integrity sha512-lZYyj+XpTwRVuV4Zx2AjFHagT0VwNnfUb/4ZaQOw7dlzdU8lNti97MTHyC5YRxICvBupjxHeN/sF5lWFWdT7lw==
+"@bitriel/default-token-list@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.0.6.tgz#f21cde7a4fff61f9cb89f4076b0aef5f8766f616"
+  integrity sha512-3gdGVLhF2TAsZLTAuT4s3I4VL9/89qfSYKK5s9jRKo9saFexkyw5TG/vvWyqKrzKYzSPZwlnGOr5/yRbWUq8ow==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
