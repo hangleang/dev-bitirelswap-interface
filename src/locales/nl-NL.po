@@ -1633,7 +1633,7 @@ msgid "You are creating a pool"
 msgstr "U maakt een pool aan"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
+msgid "You are the first liquidity provider for this BitrielSwap pool. Your liquidity will migrate at the current {0} price."
 msgstr "U bent de eerste liquiditeitsaanbieder voor deze Uniswap V3 pool. Uw liquiditeit zal migreren tegen de huidige {0} prijs."
 
 #: src/pages/AddLiquidityV2/index.tsx

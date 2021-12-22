@@ -1633,7 +1633,7 @@ msgid "You are creating a pool"
 msgstr "Vytváříte fond"
 
 #: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
+msgid "You are the first liquidity provider for this BitrielSwap pool. Your liquidity will migrate at the current {0} price."
 msgstr "Jste prvním poskytovatelem likvidity pro tento fond Uniswap V3. Vaše likvidita bude migrovat za aktuální cenu {0}."
 
 #: src/pages/AddLiquidityV2/index.tsx

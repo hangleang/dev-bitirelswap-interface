@@ -194,7 +194,6 @@ export default function AddLiquidity({
     }
 
     if (position && account && deadline) {
-      console.log(position)
       const useNative = currencyA.isNative ? currencyA : currencyB.isNative ? currencyB : undefined
       const { calldata, value } =
         hasExistingPosition && tokenId
@@ -242,15 +241,11 @@ export default function AddLiquidity({
         }
       }
 
-      library.getBlock('latest').then((result) => console.log(result.gasLimit))
-
       setAttemptingTxn(true)
       library
         .getSigner()
         .estimateGas(txn)
         .then(async (estimate) => {
-          console.log(estimate)
-
           const newTxn = {
             ...txn,
             gasLimit: calculateGasMargin(chainId, estimate),
@@ -561,7 +556,7 @@ export default function AddLiquidity({
                             style={{ marginBottom: 8, fontWeight: 500, opacity: 0.8 }}
                             textAlign="center"
                           >
-                            You are the first liquidity provider for this Uniswap V3 pool.
+                            You are the first liquidity provider for this BitrielSwap pool.
                           </TYPE.body>
 
                           <TYPE.body fontWeight={500} textAlign="center" fontSize={14} style={{ opacity: 0.8 }}>

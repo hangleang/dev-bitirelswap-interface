@@ -43,38 +43,16 @@ const PARAMS: {
     rpcUrls: ['https://bsc-dataseed.binance.org'],
     blockExplorerUrls: ['https://bscscan.com'],
   },
-  [ChainId.ARBITRUM_ONE]: {
-    chainId: '0xA4B1',
-    chainName: 'Arbitrum',
-    nativeCurrency: {
-      name: 'Ethereum',
-      symbol: 'ETH',
-      decimals: 18,
-    },
-    rpcUrls: ['https://arb1.arbitrum.io/rpc'],
-    blockExplorerUrls: ['https://explorer.arbitrum.io/'],
-  },
-  [ChainId.OPTIMISM]: {
-    chainId: '0xA',
-    chainName: 'Optimism',
-    nativeCurrency: {
-      name: 'Ethereum',
-      symbol: 'ETH',
-      decimals: 18,
-    },
-    rpcUrls: ['https://mainnet.optimism.io'],
-    blockExplorerUrls: ['https://optimistic.etherscan.io'],
-  },
   [ChainId.SEL_TESTNET]: {
     chainId: '0xDE',
-    chainName: 'Selendra',
+    chainName: 'Selendra Testnet',
     nativeCurrency: {
       name: 'Selendra',
       symbol: 'SEL',
       decimals: 18,
     },
     rpcUrls: ['https://rpc.testnet.selendra.org'],
-    blockExplorerUrls: ['https://testnet.bscscan.com'],
+    blockExplorerUrls: null,
   },
 }
 
@@ -94,45 +72,37 @@ export default function NetworkModal(): JSX.Element | null {
       </div>
 
       <div className="grid grid-flow-row-dense grid-cols-1 gap-5 overflow-y-auto md:grid-cols-2">
-        {[ChainId.MAINNET, ChainId.BSC, ChainId.ARBITRUM_ONE, ChainId.OPTIMISM, ChainId.SEL_TESTNET].map(
-          (key: ChainId, i: number) => {
-            if (chainId === key) {
-              return (
-                <button key={i} className="w-full col-span-1 p-px rounded bg-gradient-to-r from-blue to-pink">
-                  <div className="flex items-center w-full h-full p-3 space-x-3 rounded bg-dark-1000">
-                    <img
-                      src={NETWORK_ICON[key]}
-                      alt="Switch Network"
-                      className="rounded-md"
-                      width="32px"
-                      height="32px"
-                    />
-                    <div className="font-bold text-primary">{NETWORK_LABELS[key]}</div>
-                  </div>
-                </button>
-              )
-            }
+        {[ChainId.MAINNET, ChainId.BSC, ChainId.SEL_TESTNET].map((key: ChainId, i: number) => {
+          if (chainId === key) {
             return (
-              <button
-                key={i}
-                onClick={() => {
-                  toggleNetworkModal()
-                  const params = PARAMS[key]
-                  Cookie.set('chainId', key)
-                  if (key === ChainId.MAINNET) {
-                    library?.send('wallet_switchEthereumChain', [{ chainId: '0x1' }, account])
-                  } else {
-                    library?.send('wallet_addEthereumChain', [params, account])
-                  }
-                }}
-                className="flex items-center w-full col-span-1 p-3 space-x-3 rounded cursor-pointer bg-dark-800 hover:bg-dark-700"
-              >
-                <img src={NETWORK_ICON[key]} alt="Switch Network" className="rounded-md" width="32px" height="32px" />
-                <div className="font-bold text-primary">{NETWORK_LABELS[key]}</div>
+              <button key={i} className="w-full col-span-1 p-px rounded bg-gradient-to-r from-blue to-pink">
+                <div className="flex items-center w-full h-full p-3 space-x-3 rounded bg-dark-1000">
+                  <img src={NETWORK_ICON[key]} alt="Switch Network" className="rounded-md" width="32px" height="32px" />
+                  <div className="font-bold text-primary">{NETWORK_LABELS[key]}</div>
+                </div>
               </button>
             )
           }
-        )}
+          return (
+            <button
+              key={i}
+              onClick={() => {
+                toggleNetworkModal()
+                const params = PARAMS[key]
+                Cookie.set('chainId', key)
+                if (key === ChainId.MAINNET) {
+                  library?.send('wallet_switchEthereumChain', [{ chainId: '0x1' }, account])
+                } else {
+                  library?.send('wallet_addEthereumChain', [params, account])
+                }
+              }}
+              className="flex items-center w-full col-span-1 p-3 space-x-3 rounded cursor-pointer bg-dark-800 hover:bg-dark-700"
+            >
+              <img src={NETWORK_ICON[key]} alt="Switch Network" className="rounded-md" width="32px" height="32px" />
+              <div className="font-bold text-primary">{NETWORK_LABELS[key]}</div>
+            </button>
+          )
+        })}
       </div>
     </Modal>
   )
