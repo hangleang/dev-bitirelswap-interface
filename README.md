@@ -7,7 +7,7 @@ An open source interface for BitrielSwap -- a protocol for decentralized exchang
 ## Accessing the BitrielSwap Interface
 
 To access the Uniswap Interface, use an IPFS gateway link from the latest release
-or visit [app.bitrielswap.com](https://app.bitrielswap.com).
+or visit [dapp-bitriel.netlify.app/](https://dapp-bitriel.netlify.app/).
 
 ## Contributions
 

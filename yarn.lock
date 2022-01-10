@@ -1296,10 +1296,10 @@
   resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.9.tgz#7cc33f6eb9019f8357c554e6c9e9b3e1b7c0a4c7"
   integrity sha512-GKiXNoUwzZ/beijyTY+sTThDaUhASMJRr/OHwzqDXP/rOH9msaCWYnpdz2fsxmGeGs1n9vhpUiowSy8K3ck/SA==
 
-"@bitriel/bitrielswap-sdk@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.6.tgz#862f2324e18fd3a66c042387dc39f0a578ad8dda"
-  integrity sha512-l13TQ3FZTpg0C3/XNcnN6AuA4qIThr7IU06FqxNJMGBzped4RVNexlKn9oIe62Fho1LtsZVEsOIkflGxia55DA==
+"@bitriel/bitrielswap-sdk@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.9.tgz#b2c92fd7c3017a214196545a6589f05f67036e77"
+  integrity sha512-RJNjpFYNXTi/ttL5BpEm1G9DCCoAnsnnL+1FddOeRFrc6ZW7ZQfTv52C0WfY/okcTgRkq1EE1+RUYIjBnWP39g==
   dependencies:
     "@bitriel/bitrielswap-core" "^1.0.1"
     "@bitriel/bitrielswap-periphery" "^1.1.8"
@@ -1309,10 +1309,10 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
-"@bitriel/default-token-list@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.0.6.tgz#f21cde7a4fff61f9cb89f4076b0aef5f8766f616"
-  integrity sha512-3gdGVLhF2TAsZLTAuT4s3I4VL9/89qfSYKK5s9jRKo9saFexkyw5TG/vvWyqKrzKYzSPZwlnGOr5/yRbWUq8ow==
+"@bitriel/default-token-list@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.0.7.tgz#cb0202bfeac5f1e782bdba8e4a46f12ddcd93f0c"
+  integrity sha512-9oeKzvBVNN95r7kIJxOJ12iJHnjKF3ILR1tGmG5OzvFww7ouMoQ0Z6SN/lDRxty+cQ6uqTtlCjYloMJgFw0E4w==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
