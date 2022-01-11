@@ -1296,10 +1296,10 @@
   resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.9.tgz#7cc33f6eb9019f8357c554e6c9e9b3e1b7c0a4c7"
   integrity sha512-GKiXNoUwzZ/beijyTY+sTThDaUhASMJRr/OHwzqDXP/rOH9msaCWYnpdz2fsxmGeGs1n9vhpUiowSy8K3ck/SA==
 
-"@bitriel/bitrielswap-sdk@^1.2.9":
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.9.tgz#b2c92fd7c3017a214196545a6589f05f67036e77"
-  integrity sha512-RJNjpFYNXTi/ttL5BpEm1G9DCCoAnsnnL+1FddOeRFrc6ZW7ZQfTv52C0WfY/okcTgRkq1EE1+RUYIjBnWP39g==
+"@bitriel/bitrielswap-sdk@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.3.2.tgz#084d5d65e26664e33fd6a946676214ac2c6abb11"
+  integrity sha512-AeMs/rKOnujG7Xo/29QAuETuy2HA6XgzyPHnmivM+NUjT8RZDe4jtmMVwDH5JFnZR2i0GsJMSpIeuh+3dC5ttA==
   dependencies:
     "@bitriel/bitrielswap-core" "^1.0.1"
     "@bitriel/bitrielswap-periphery" "^1.1.8"
