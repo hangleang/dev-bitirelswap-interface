@@ -41,6 +41,9 @@ export default function useWrapCallback(
     const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)
 
     if (inputCurrency.isNative && weth.equals(outputCurrency)) {
+      const nativeSymbol = NATIVE[chainId].symbol
+      const wnativeSymbol = WNATIVE[chainId].symbol
+
       return {
         wrapType: WrapType.WRAP,
         execute:
@@ -49,16 +52,18 @@ export default function useWrapCallback(
                 try {
                   const txReceipt = await wethContract.deposit({ value: `0x${inputAmount.quotient.toString(16)}` })
                   addTransaction(txReceipt, {
-                    summary: `Wrap ${inputAmount.toSignificant(6)} ${NATIVE[chainId as ChainId].symbol} to ${
-                      WNATIVE[chainId].symbol
-                    }`,
+                    summary: `Wrap ${inputAmount.toSignificant(6)} ${nativeSymbol} to ${wnativeSymbol}`,
                   })
                 } catch (error) {
                   console.error('Could not deposit', error)
                 }
               }
             : undefined,
-        inputError: sufficientBalance ? undefined : hasInputAmount ? 'Insufficient ETH balance' : 'Enter ETH amount',
+        inputError: sufficientBalance
+          ? undefined
+          : hasInputAmount
+          ? `Insufficient ${nativeSymbol} balance`
+          : `Enter ${nativeSymbol} amount`,
       }
     } else if (weth.equals(inputCurrency) && outputCurrency.isNative) {
       return {

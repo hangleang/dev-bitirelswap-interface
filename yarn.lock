@@ -1286,33 +1286,28 @@
     "@truffle/hdwallet-provider" "^1.4.1"
     dotenv "^10.0.0"
 
-"@bitriel/bitrielswap-periphery@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.8.tgz#afb97b4dc0f88bb8867b52a379e7bea152770d25"
-  integrity sha512-FW0q9h+mohK+uOqlyhYoReLeQuL9Nvv5cnxq67WMTtQAb+sv1NsG8s4HrRwDYAZJSGH7jK7D5RWpnSz2Zna8Hw==
+"@bitriel/bitrielswap-periphery@^1.1.10":
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.10.tgz#ef9fbedd455b4660b6c3715b7c25931102c34a13"
+  integrity sha512-BX9eG34FooSEHjvzB32dwVTvKUZndzN0dTWm4FPzAz2KeYG4p/dM4wCgXHyNQTLdQAnHRClvjSyuKH8//0VlgQ==
 
-"@bitriel/bitrielswap-periphery@^1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.9.tgz#7cc33f6eb9019f8357c554e6c9e9b3e1b7c0a4c7"
-  integrity sha512-GKiXNoUwzZ/beijyTY+sTThDaUhASMJRr/OHwzqDXP/rOH9msaCWYnpdz2fsxmGeGs1n9vhpUiowSy8K3ck/SA==
-
-"@bitriel/bitrielswap-sdk@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.3.2.tgz#084d5d65e26664e33fd6a946676214ac2c6abb11"
-  integrity sha512-AeMs/rKOnujG7Xo/29QAuETuy2HA6XgzyPHnmivM+NUjT8RZDe4jtmMVwDH5JFnZR2i0GsJMSpIeuh+3dC5ttA==
+"@bitriel/bitrielswap-sdk@^1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.3.7.tgz#27416103a513c00009ee6d37ffdd0032d563647a"
+  integrity sha512-lkhCCHLh66g8+xWQPZd0l4cA5uQkWAuseSLsF53RwgH+P+qk/NMBaPD1Y2PHB3N9ckA+HOR0nwhaVdHRv3yAWw==
   dependencies:
     "@bitriel/bitrielswap-core" "^1.0.1"
-    "@bitriel/bitrielswap-periphery" "^1.1.8"
+    "@bitriel/bitrielswap-periphery" "^1.1.10"
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"
     "@uniswap/sdk-core" "^3.0.0-alpha.3"
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
-"@bitriel/default-token-list@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.0.7.tgz#cb0202bfeac5f1e782bdba8e4a46f12ddcd93f0c"
-  integrity sha512-9oeKzvBVNN95r7kIJxOJ12iJHnjKF3ILR1tGmG5OzvFww7ouMoQ0Z6SN/lDRxty+cQ6uqTtlCjYloMJgFw0E4w==
+"@bitriel/default-token-list@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.0.10.tgz#983f30747ac74fcfc3dc7bdb8f06ae6ae72ee8ce"
+  integrity sha512-XyInm8CvAoVlFcYtfkRhuUTQJEdH1iannH7UxAeqK/yzsFbuhaYW6z8f0UDZP37+bs23TBh0A40/kYvKz1G4Gw==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
