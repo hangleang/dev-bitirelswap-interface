@@ -1,6 +1,7 @@
 import { getAddress } from '@ethersproject/address'
 import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
+// import { Contract } from 'web3-eth-contract'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { Token } from '@uniswap/sdk-core'
 import { FeeAmount } from '@bitriel/bitrielswap-sdk/dist/'

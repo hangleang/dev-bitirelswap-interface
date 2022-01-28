@@ -55,6 +55,10 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { AddRemoveTabs } from 'components/NavigationTabs'
 import HoverInlineText from 'components/HoverInlineText'
 
+import Web3 from 'web3'
+import { abi as NFTPositionManagerABI } from '@bitriel/bitrielswap-periphery/build/contracts/NonfungiblePositionManager.json'
+import { AbiItem } from 'web3-utils'
+
 const DEFAULT_ADD_IN_RANGE_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 
 export default function AddLiquidity({
@@ -68,7 +72,13 @@ export default function AddLiquidity({
   const toggleWalletModal = useWalletModalToggle() // toggle wallet when disconnected
   const expertMode = useIsExpertMode()
   const addTransaction = useTransactionAdder()
-  const positionManager = useV3NFTPositionManagerContract()
+  // const positionManager = useV3NFTPositionManagerContract()
+
+  const web3 = new Web3(Web3.givenProvider || 'https://rpc.testnet.selendra.org/')
+  const positionManager = new web3.eth.Contract(
+    NFTPositionManagerABI as AbiItem[],
+    NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[222]
+  )
 
   // check for existing position if tokenId in url
   const { position: existingPositionDetails, loading: positionLoading } = useV3PositionFromTokenId(
@@ -211,7 +221,8 @@ export default function AddLiquidity({
               createPool: noLiquidity,
             })
 
-      let txn: { to: string; data: string; value: string } = {
+      let txn: { from: string; to: string; data: string; value: string } = {
+        from: account,
         to: NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[chainId],
         data: calldata,
         value,
@@ -235,6 +246,7 @@ export default function AddLiquidity({
         ]
         const data = argentWalletContract.interface.encodeFunctionData('wc_multiCall', [batch])
         txn = {
+          ...txn,
           to: argentWalletContract.address,
           data,
           value: '0x0',
@@ -242,32 +254,58 @@ export default function AddLiquidity({
       }
 
       setAttemptingTxn(true)
-      library
-        .getSigner()
+      // library
+      //   .getSigner()
+      //   .estimateGas(txn)
+      web3.eth
         .estimateGas(txn)
-        .then(async (estimate) => {
+        .then((estimate) => {
+          console.log(`estimateGas: ${estimate}`)
+          const gasLimit = calculateGasMargin(chainId, BigNumber.from(estimate)).toString()
+          console.log(`gasLimit: ${gasLimit}`)
+
           const newTxn = {
             ...txn,
-            gasLimit: calculateGasMargin(chainId, estimate),
+            // gasLimit: calculateGasMargin(chainId, BigNumber.from(estimate)),
+            gas: gasLimit,
           }
 
-          return library
-            .getSigner()
-            .sendTransaction(newTxn)
-            .then((response: TransactionResponse) => {
-              setAttemptingTxn(false)
-              addTransaction(response, {
-                summary: noLiquidity
-                  ? t`Create pool and add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`
-                  : t`Add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`,
-              })
-              setTxHash(response.hash)
-              ReactGA.event({
-                category: 'Liquidity',
-                action: 'Add',
-                label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
-              })
+          // return library
+          //   .getSigner()
+          //   .sendTransaction(newTxn)
+          //   .then((response: TransactionResponse) => {
+          // return web3.eth.accounts
+          //   .signTransaction(newTxn, 'c2171b729c802b89fb6888d84f9a62ea27b88cec7ba5afcc4c7ead9638dbeee9')
+          //   .then((signed) => {
+          //     return web3.eth.sendSignedTransaction(signed.rawTransaction).then((receipt) => {
+          //       setAttemptingTxn(false)
+          //       // addTransaction(response, {
+          //       //   summary: noLiquidity
+          //       //     ? t`Create pool and add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`
+          //       //     : t`Add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`,
+          //       // })
+          //       setTxHash(receipt.transactionHash)
+          //       ReactGA.event({
+          //         category: 'Liquidity',
+          //         action: 'Add',
+          //         label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
+          //       })
+          //     })
+          //   })
+          return web3.eth.sendTransaction(newTxn).then((receipt) => {
+            setAttemptingTxn(false)
+            addTransaction(receipt, {
+              summary: noLiquidity
+                ? t`Create pool and add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`
+                : t`Add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`,
             })
+            setTxHash(receipt.transactionHash)
+            ReactGA.event({
+              category: 'Liquidity',
+              action: 'Add',
+              label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
+            })
+          })
         })
         .catch((error) => {
           console.error('Failed to send transaction', error)
