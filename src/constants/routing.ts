@@ -63,7 +63,7 @@ const WRAPPED_NATIVE_ONLY: ChainTokenList = {
   [ChainId.OPTIMISTIC_KOVAN]: [WNATIVE[ChainId.OPTIMISTIC_KOVAN]],
   [ChainId.BSC]: [WNATIVE[ChainId.BSC]],
   [ChainId.BSC_TESTNET]: [WNATIVE[ChainId.BSC_TESTNET]],
-  [ChainId.SEL_TESTNET]: [WNATIVE[ChainId.SEL_TESTNET]],
+  [ChainId.INDRA_TESTNET]: [WNATIVE[ChainId.INDRA_TESTNET]],
   // [ChainId.MOONBEAM_TESTNET]: [WNATIVE[ChainId.MOONBEAM_TESTNET]],
   // [ChainId.AVALANCHE]: [WNATIVE[ChainId.AVALANCHE]],
   // [ChainId.AVALANCHE_TESTNET]: [WNATIVE[ChainId.AVALANCHE_TESTNET]],
@@ -139,5 +139,5 @@ export const PINNED_PAIRS: { readonly [chainId: number]: [Token, Token][] } = {
   ],
   [ChainId.BSC]: [[BTR[ChainId.BSC], WNATIVE[ChainId.BSC]]],
   [ChainId.BSC_TESTNET]: [[BTR[ChainId.BSC_TESTNET], WNATIVE[ChainId.BSC_TESTNET]]],
-  [ChainId.SEL_TESTNET]: [[BTR[ChainId.SEL_TESTNET], WNATIVE[ChainId.SEL_TESTNET]]],
+  [ChainId.INDRA_TESTNET]: [[BTR[ChainId.INDRA_TESTNET], WNATIVE[ChainId.INDRA_TESTNET]]],
 }

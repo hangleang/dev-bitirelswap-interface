@@ -39,7 +39,7 @@ export const NETWORK_LABELS: { [chainId in ChainId | number]: string } = {
   [ChainId.ARBITRUM_RINKEBY]: 'Arbitrum Rinkeby',
   [ChainId.OPTIMISM]: 'Optimism',
   [ChainId.OPTIMISTIC_KOVAN]: 'Optimism Kovan',
-  [ChainId.SEL_TESTNET]: 'Selendra Testnet',
+  [ChainId.INDRA_TESTNET]: 'Selendra Testnet',
 }
 
 export const NETWORK_ICON: { [chainId in ChainId | number]: string } = {
@@ -54,7 +54,7 @@ export const NETWORK_ICON: { [chainId in ChainId | number]: string } = {
   [ChainId.ARBITRUM_RINKEBY]: Arbitrum,
   [ChainId.OPTIMISM]: Optimism,
   [ChainId.OPTIMISTIC_KOVAN]: Optimism,
-  [ChainId.SEL_TESTNET]: Selendra,
+  [ChainId.INDRA_TESTNET]: Selendra,
 }
 
 export const BLOCKCHAIN: { [chainId in ChainId | number]: string } = {

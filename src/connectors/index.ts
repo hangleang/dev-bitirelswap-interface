@@ -35,7 +35,7 @@ const NETWORK_URLS: {
   [ChainId.OPTIMISTIC_KOVAN]: `https://kovan.optimism.io`,
   [ChainId.BSC]: `https://bsc-dataseed.binance.org`,
   [ChainId.BSC_TESTNET]: `https://data-seed-prebsc-1-s1.binance.org:8545`,
-  [ChainId.SEL_TESTNET]: `https://rpc.testnet.selendra.org`,
+  [ChainId.INDRA_TESTNET]: `https://rpc.testnet.selendra.org`,
 }
 
 const SUPPORTED_CHAIN_IDS: ChainId[] = [
@@ -50,7 +50,7 @@ const SUPPORTED_CHAIN_IDS: ChainId[] = [
   ChainId.OPTIMISTIC_KOVAN,
   ChainId.BSC,
   ChainId.BSC_TESTNET,
-  ChainId.SEL_TESTNET,
+  ChainId.INDRA_TESTNET,
 ]
 
 export const network = new NetworkConnector({

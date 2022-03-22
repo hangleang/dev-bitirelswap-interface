@@ -41,7 +41,7 @@ const logo: { readonly [chainId in ChainId | number]: string } = {
   ]),
   [ChainId.BSC]: BinanceLogo,
   [ChainId.BSC_TESTNET]: BinanceLogo,
-  [ChainId.SEL_TESTNET]: SelendraLogo,
+  [ChainId.INDRA_TESTNET]: SelendraLogo,
 }
 
 const StyledLogo = styled(Logo)<{ size: string }>`

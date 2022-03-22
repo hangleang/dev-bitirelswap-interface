@@ -64,7 +64,7 @@ export const UNI: { [chainId: number]: Token } = {
 export const BTR: { [chainId: number]: Token } = {
   [ChainId.BSC]: new Token(ChainId.BSC, BTR_ADDRESS[ChainId.BSC], 18, 'SEL', 'Selendra'),
   [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, BTR_ADDRESS[ChainId.BSC_TESTNET], 18, 'SEL', 'Selendra'),
-  [ChainId.SEL_TESTNET]: new Token(ChainId.SEL_TESTNET, BTR_ADDRESS[ChainId.SEL_TESTNET], 18, 'Kum', 'Kumandra'),
+  [ChainId.INDRA_TESTNET]: new Token(ChainId.INDRA_TESTNET, BTR_ADDRESS[ChainId.INDRA_TESTNET], 18, 'Kum', 'Kumandra'),
 }
 
 export class ExtendedEther extends Ether {

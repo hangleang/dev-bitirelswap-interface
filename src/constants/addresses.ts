@@ -17,7 +17,7 @@ export const UNI_ADDRESS: AddressMap = constructSameAddressMap('0x1f9840a85d5aF5
 export const BTR_ADDRESS: AddressMap = {
   [ChainId.BSC]: '0x288d3a87a87c284ed685e0490e5c4cc0883a060a',
   [ChainId.BSC_TESTNET]: '0xf0776746087bda7dc9648b5c964048ce55453d23',
-  [ChainId.SEL_TESTNET]: '0xd60ccFdf97985c2920d8E734c6352Aec85A9a4f3',
+  [ChainId.INDRA_TESTNET]: '0xd60ccFdf97985c2920d8E734c6352Aec85A9a4f3',
 }
 export const V2_FACTORY_ADDRESSES: AddressMap = {
   ...constructSameAddressMap(V2_FACTORY_ADDRESS),

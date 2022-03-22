@@ -60,7 +60,7 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
     [ChainId.OPTIMISTIC_KOVAN]: { ...map1[ChainId.OPTIMISTIC_KOVAN], ...map2[ChainId.OPTIMISTIC_KOVAN] },
     [ChainId.BSC]: { ...map1[ChainId.BSC], ...map2[ChainId.BSC] },
     [ChainId.BSC_TESTNET]: { ...map1[ChainId.BSC_TESTNET], ...map2[ChainId.BSC_TESTNET] },
-    [ChainId.SEL_TESTNET]: { ...map1[ChainId.SEL_TESTNET], ...map2[ChainId.SEL_TESTNET] },
+    [ChainId.INDRA_TESTNET]: { ...map1[ChainId.INDRA_TESTNET], ...map2[ChainId.INDRA_TESTNET] },
   }
 }
 
