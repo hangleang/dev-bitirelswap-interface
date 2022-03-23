@@ -1,5 +1,5 @@
 import { useCallback, useContext, useMemo, useState } from 'react'
-// import { TransactionResponse } from '@ethersproject/providers'
+import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
 import { AlertTriangle, AlertCircle } from 'react-feather'
 import ReactGA from 'react-ga'
@@ -254,58 +254,33 @@ export default function AddLiquidity({
       }
 
       setAttemptingTxn(true)
-      // library
-      //   .getSigner()
-      //   .estimateGas(txn)
-      web3.eth
+
+      library
+        .getSigner()
         .estimateGas(txn)
         .then((estimate) => {
-          console.log(`estimateGas: ${estimate}`)
-          const gasLimit = calculateGasMargin(chainId, BigNumber.from(estimate)).toString()
-          console.log(`gasLimit: ${gasLimit}`)
-
           const newTxn = {
             ...txn,
-            // gasLimit: calculateGasMargin(chainId, BigNumber.from(estimate)),
-            gas: gasLimit,
+            gasLimit: calculateGasMargin(chainId, estimate),
           }
 
-          // return library
-          //   .getSigner()
-          //   .sendTransaction(newTxn)
-          //   .then((response: TransactionResponse) => {
-          // return web3.eth.accounts
-          //   .signTransaction(newTxn, 'c2171b729c802b89fb6888d84f9a62ea27b88cec7ba5afcc4c7ead9638dbeee9')
-          //   .then((signed) => {
-          //     return web3.eth.sendSignedTransaction(signed.rawTransaction).then((receipt) => {
-          //       setAttemptingTxn(false)
-          //       // addTransaction(response, {
-          //       //   summary: noLiquidity
-          //       //     ? t`Create pool and add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`
-          //       //     : t`Add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`,
-          //       // })
-          //       setTxHash(receipt.transactionHash)
-          //       ReactGA.event({
-          //         category: 'Liquidity',
-          //         action: 'Add',
-          //         label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
-          //       })
-          //     })
-          //   })
-          return web3.eth.sendTransaction(newTxn).then((receipt) => {
-            setAttemptingTxn(false)
-            addTransaction(receipt, {
-              summary: noLiquidity
-                ? t`Create pool and add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`
-                : t`Add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`,
+          return library
+            .getSigner()
+            .sendTransaction(newTxn)
+            .then((response: TransactionResponse) => {
+              setAttemptingTxn(false)
+              addTransaction(response, {
+                summary: noLiquidity
+                  ? t`Create pool and add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`
+                  : t`Add ${baseCurrency?.symbol}/${quoteCurrency?.symbol} V3 liquidity`,
+              })
+              setTxHash(response.hash)
+              ReactGA.event({
+                category: 'Liquidity',
+                action: 'Add',
+                label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
+              })
             })
-            setTxHash(receipt.transactionHash)
-            ReactGA.event({
-              category: 'Liquidity',
-              action: 'Add',
-              label: [currencies[Field.CURRENCY_A]?.symbol, currencies[Field.CURRENCY_B]?.symbol].join('/'),
-            })
-          })
         })
         .catch((error) => {
           console.error('Failed to send transaction', error)
