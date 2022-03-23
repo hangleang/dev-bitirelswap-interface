@@ -17,7 +17,7 @@ export const UNI_ADDRESS: AddressMap = constructSameAddressMap('0x1f9840a85d5aF5
 export const BTR_ADDRESS: AddressMap = {
   [ChainId.BSC]: '0x288d3a87a87c284ed685e0490e5c4cc0883a060a',
   [ChainId.BSC_TESTNET]: '0xf0776746087bda7dc9648b5c964048ce55453d23',
-  [ChainId.INDRA_TESTNET]: '0xd60ccFdf97985c2920d8E734c6352Aec85A9a4f3',
+  [ChainId.INDRA_TESTNET]: '0xe03ABC0663c88Ec28AEAD62E6f1dd329c26b3518',
 }
 export const V2_FACTORY_ADDRESSES: AddressMap = {
   ...constructSameAddressMap(V2_FACTORY_ADDRESS),
@@ -38,10 +38,12 @@ export const GOVERNANCE_ALPHA_V0_ADDRESSES: AddressMap = constructSameAddressMap
  * The latest governor alpha that is currently admin of timelock
  */
 export const GOVERNANCE_ALPHA_V1_ADDRESSES: AddressMap = {
-  [ChainId.MAINNET]: '0xC4e172459f1E7939D522503B81AFAaC1014CE6F6',
+  [ChainId.INDRA_TESTNET]: '0xd8fbC3F733a70d604492eA4C336cc008a4CF68dc',
 }
 
-export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
+export const TIMELOCK_ADDRESS: AddressMap = {
+  [ChainId.INDRA_TESTNET]: '0x4E5811C4c2b2EA91E30dC503e8a91aB25ef63437',
+}
 
 export const MERKLE_DISTRIBUTOR_ADDRESS: AddressMap = {
   [ChainId.MAINNET]: '0x090D4613473dEE047c3f2706764f49E0821D256e',

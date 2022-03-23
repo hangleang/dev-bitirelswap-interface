@@ -1,6 +1,6 @@
 import { TransactionResponse } from '@ethersproject/providers'
 import { t } from '@lingui/macro'
-import { abi as GOV_ABI } from '@uniswap/governance/build/GovernorAlpha.json'
+import { abi as GOV_ABI } from '@bitriel/governance/artifacts/contracts/BitrielGovernance.sol/BitrielGovernor.json'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { UNISWAP_GRANTS_PROPOSAL_DESCRIPTION } from 'constants/proposals/uniswap_grants_proposal_description'
 import { Contract } from 'ethers'
@@ -9,14 +9,14 @@ import {
   useGovernanceV0Contract,
   useGovernanceV1Contract,
   useLatestGovernanceContract,
-  useUniContract,
+  useBitrielContract,
 } from 'hooks/useContract'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useCallback, useMemo } from 'react'
 import { calculateGasMargin } from 'utils/calculateGasMargin'
 import { ChainId } from '@bitriel/bitrielswap-sdk'
 import { UNISWAP_GRANTS_START_BLOCK } from '../../constants/proposals'
-import { UNI } from '../../constants/tokens'
+import { BTR } from '../../constants/tokens'
 import { useLogs } from '../logs/hooks'
 import { useSingleCallResult, useSingleContractMultipleData } from '../multicall/hooks'
 import { useTransactionAdder } from '../transactions/hooks'
@@ -197,7 +197,7 @@ export function useProposalData(governorIndex: number, id: string): ProposalData
 // get the users delegatee if it exists
 export function useUserDelegatee(): string {
   const { account } = useActiveWeb3React()
-  const uniContract = useUniContract()
+  const uniContract = useBitrielContract()
   const { result } = useSingleCallResult(uniContract, 'delegates', [account ?? undefined])
   return result?.[0] ?? undefined
 }
@@ -205,33 +205,33 @@ export function useUserDelegatee(): string {
 // gets the users current votes
 export function useUserVotes(): { loading: boolean; votes: CurrencyAmount<Token> | undefined } {
   const { account, chainId } = useActiveWeb3React()
-  const uniContract = useUniContract()
+  const uniContract = useBitrielContract()
 
   // check for available votes
-  const { result, loading } = useSingleCallResult(uniContract, 'getCurrentVotes', [account ?? undefined])
+  const { result, loading } = useSingleCallResult(uniContract, 'getVotes', [account ?? undefined])
   return useMemo(() => {
-    const uni = chainId ? UNI[chainId] : undefined
-    return { loading, votes: uni && result ? CurrencyAmount.fromRawAmount(uni, result?.[0]) : undefined }
+    const btr = chainId ? BTR[chainId] : undefined
+    return { loading, votes: btr && result ? CurrencyAmount.fromRawAmount(btr, result?.[0]) : undefined }
   }, [chainId, loading, result])
 }
 
 // fetch available votes as of block (usually proposal start block)
 export function useUserVotesAsOfBlock(block: number | undefined): CurrencyAmount<Token> | undefined {
   const { account, chainId } = useActiveWeb3React()
-  const uniContract = useUniContract()
+  const uniContract = useBitrielContract()
 
   // check for available votes
-  const uni = chainId ? UNI[chainId] : undefined
+  const btr = chainId ? BTR[chainId] : undefined
   const votes = useSingleCallResult(uniContract, 'getPriorVotes', [account ?? undefined, block ?? undefined])
     ?.result?.[0]
-  return votes && uni ? CurrencyAmount.fromRawAmount(uni, votes) : undefined
+  return votes && btr ? CurrencyAmount.fromRawAmount(btr, votes) : undefined
 }
 
 export function useDelegateCallback(): (delegatee: string | undefined) => undefined | Promise<string> {
   const { account, chainId, library } = useActiveWeb3React()
   const addTransaction = useTransactionAdder()
 
-  const uniContract = useUniContract()
+  const uniContract = useBitrielContract()
 
   return useCallback(
     (delegatee: string | undefined) => {
@@ -329,10 +329,10 @@ export function useProposalThreshold(): CurrencyAmount<Token> | undefined {
 
   const latestGovernanceContract = useLatestGovernanceContract()
   const res = useSingleCallResult(latestGovernanceContract, 'proposalThreshold')
-  const uni = chainId ? UNI[chainId] : undefined
+  const btr = chainId ? BTR[chainId] : undefined
 
-  if (res?.result?.[0] && uni) {
-    return CurrencyAmount.fromRawAmount(uni, res.result[0])
+  if (res?.result?.[0] && btr) {
+    return CurrencyAmount.fromRawAmount(btr, res.result[0])
   }
 
   return undefined

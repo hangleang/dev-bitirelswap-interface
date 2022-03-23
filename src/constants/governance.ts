@@ -1,4 +1,5 @@
 import {
+  BTR_ADDRESS,
   GOVERNANCE_ALPHA_V0_ADDRESSES,
   GOVERNANCE_ALPHA_V1_ADDRESSES,
   TIMELOCK_ADDRESS,
@@ -9,9 +10,13 @@ import { ChainId } from '@bitriel/bitrielswap-sdk'
 export const COMMON_CONTRACT_NAMES: Record<number, { [address: string]: string }> = {
   [ChainId.MAINNET]: {
     [UNI_ADDRESS[ChainId.MAINNET]]: 'UNI',
-    [TIMELOCK_ADDRESS]: 'Timelock',
     [GOVERNANCE_ALPHA_V0_ADDRESSES[ChainId.MAINNET]]: 'Governance (V0)',
     [GOVERNANCE_ALPHA_V1_ADDRESSES[ChainId.MAINNET]]: 'Governance',
+  },
+  [ChainId.INDRA_TESTNET]: {
+    [BTR_ADDRESS[ChainId.INDRA_TESTNET]]: 'BTR',
+    [TIMELOCK_ADDRESS[ChainId.INDRA_TESTNET]]: 'Timelock',
+    [GOVERNANCE_ALPHA_V1_ADDRESSES[ChainId.INDRA_TESTNET]]: 'Governance',
   },
 }
 

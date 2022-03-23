@@ -1,7 +1,7 @@
 import { Contract } from '@ethersproject/contracts'
 // import { Contract } from 'web3-eth-contract'
-import { abi as GOVERNANCE_ABI } from '@uniswap/governance/build/GovernorAlpha.json'
-import { abi as UNI_ABI } from '@uniswap/governance/build/Uni.json'
+import { abi as GOVERNANCE_ABI } from '@bitriel/governance/artifacts/contracts/BitrielGovernance.sol/BitrielGovernor.json'
+import { abi as BTR_ABI } from '@bitriel/governance/artifacts/contracts/BitrielToken.sol/BitrielToken.json'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
 import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
@@ -30,7 +30,7 @@ import {
   ENS_REGISTRAR_ADDRESSES,
   GOVERNANCE_ALPHA_V0_ADDRESSES,
   GOVERNANCE_ALPHA_V1_ADDRESSES,
-  UNI_ADDRESS,
+  BTR_ADDRESS,
 } from 'constants/addresses'
 import { useMemo } from 'react'
 import { Quoter } from 'types/v3/Quoter'
@@ -124,8 +124,8 @@ export function useGovernanceV1Contract(): Contract | null {
 
 export const useLatestGovernanceContract = useGovernanceV1Contract
 
-export function useUniContract() {
-  return useContract(UNI_ADDRESS, UNI_ABI, true)
+export function useBitrielContract() {
+  return useContract(BTR_ADDRESS, BTR_ABI, true)
 }
 
 export function useStakingContract(stakingAddress?: string, withSignerIfPossible?: boolean) {

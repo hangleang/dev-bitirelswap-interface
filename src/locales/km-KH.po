@@ -1568,7 +1568,7 @@ msgstr "រង់ចាំការបញ្ជាក់"
 
 #: src/components/AddressInputPanel/index.tsx
 msgid "Wallet Address or ENS name"
-msgstr "អាសយដ្ឋានកាបូបឬឈ្មោះ ENS"
+msgstr "អាសយដ្ឋានកាបូប"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Weekly Rewards"

@@ -1304,10 +1304,15 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
-"@bitriel/default-token-list@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.1.0.tgz#b1224ae4832bba63e42a4c58aa14a473f5b932d8"
-  integrity sha512-8ofM5irPRou1YEdBbMrjV6ON/rAfOBjl4tUfOExuc6yJmE0IRI+CVrjLIFjcoXFwGeusT+f3GHQz1YKi91siSw==
+"@bitriel/default-token-list@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.1.1.tgz#5c61b8810ec4eda8a736b5da153ca694e54da866"
+  integrity sha512-TeoEzAUR1J7B0R0GiXeZJJDqNW9nUwpanVuvrQJm/1/hszcVn0tMNKEhiVIsTjcj1bNDnjY7TpL7bx4lokHkRw==
+
+"@bitriel/governance@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@bitriel/governance/-/governance-0.2.3.tgz#7ab8b7b8965f4edaefe41b3ab7da0d0eebbb2009"
+  integrity sha512-pO1fqyOaNngUgnwIFghS8dqFPwI1Vs1Q0B07dh8wO/oget67EikamRmfU5kIExHTSdYnbv1uHP1QcsNPeiCKrg==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -4118,11 +4123,6 @@
   dependencies:
     "@typescript-eslint/types" "4.31.1"
     eslint-visitor-keys "^2.0.0"
-
-"@uniswap/governance@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@uniswap/governance/-/governance-1.0.2.tgz#7371ab54dea9a5c045275001e2d5325ff2c11a93"
-  integrity sha512-L7BzdI/asAINB2F6EvJuQcg5YhykNeEfZxJrn2RPIVvx+9A9u+opDuqnBK4SYnanrsr3UEX1NwWXwDHmyw2TjQ==
 
 "@uniswap/lib@1.1.1":
   version "1.1.1"
