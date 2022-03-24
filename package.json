@@ -9,7 +9,7 @@
     "@bitriel/bitrielswap-core": "^1.0.1",
     "@bitriel/bitrielswap-periphery": "^1.1.11",
     "@bitriel/bitrielswap-sdk": "^1.4.0",
-    "@bitriel/default-token-list": "^1.1.1",
+    "@bitriel/default-token-list": "^1.1.2",
     "@bitriel/governance": "^0.2.3",
     "@ethersproject/experimental": "^5.4.0",
     "@graphql-codegen/cli": "1.21.5",

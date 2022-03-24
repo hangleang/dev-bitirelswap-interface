@@ -1304,10 +1304,10 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
-"@bitriel/default-token-list@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.1.1.tgz#5c61b8810ec4eda8a736b5da153ca694e54da866"
-  integrity sha512-TeoEzAUR1J7B0R0GiXeZJJDqNW9nUwpanVuvrQJm/1/hszcVn0tMNKEhiVIsTjcj1bNDnjY7TpL7bx4lokHkRw==
+"@bitriel/default-token-list@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@bitriel/default-token-list/-/default-token-list-1.1.2.tgz#c5592b237f1b4d42c6e3de18a97cdd9d5d436740"
+  integrity sha512-gntRhCLWOQQRoCYfj18/88oMpGhm4pSJJHkAwOdk+VUwWrGhPuB/NXLj6OI0kw4o6LsrHb2735Zqa05sB3SFYw==
 
 "@bitriel/governance@^0.2.3":
   version "0.2.3"
