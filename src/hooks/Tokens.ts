@@ -177,10 +177,10 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
-  const isETH = currencyId?.toUpperCase() === 'ETH'
-  const token = useToken(isETH ? undefined : currencyId)
+  const isNative = currencyId?.toUpperCase() === 'ETH'
+  const token = useToken(isNative ? undefined : currencyId)
   const native = useMemo(() => (chainId ? NATIVE[chainId as ChainId] : undefined), [chainId])
   const wnative = chainId ? WNATIVE[chainId] : undefined
-  if (wnative?.address?.toLowerCase() === currencyId?.toLowerCase()) return wnative
-  return isETH ? native : token
+  if (wnative?.address?.toUpperCase() === currencyId?.toUpperCase()) return wnative
+  return isNative ? native : token
 }
